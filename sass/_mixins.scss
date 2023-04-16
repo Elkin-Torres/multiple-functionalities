@@ -1,0 +1,24 @@
+
+
+@mixin flex-box($direction, $wrap, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin btn{
+border-width: 2px;
+border-style: solid;
+border-radius: 4px;
+font-size: 1.25rem;
+font-weight: 300;
+padding: 0.5rem;
+}
+
+@mixin social-media{
+  width: 30px;;
+}
+
+
