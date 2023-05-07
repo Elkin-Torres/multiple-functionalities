@@ -16,10 +16,10 @@
 
 <body>
   <header class="header">
-    <div class="header__logo">
+    <a href="index.html" class="header__logo">
       <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
       <span class="header__logo-span">M-Functions</span>
-    </div>
+    </a>
     <ol class="header__options">
       <li class="header__options-element">Planes</li>
       <li class="header__options-element">Compañía</li>
@@ -37,7 +37,7 @@
    <section class="container">
 
 <section class="container__presentation">
-  <h1 class="container__presentation-title">¿ Qué nos hace los mejores diseñando y realizando proyectos?</h1>
+  <h1 class="container__presentation-title">¿ Qué nos hace los me jores diseñando y realizando proyectos?</h1>
   <p class="container__presentation-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis esse, impedit blanditiis
     deleniti rem ipsum facilis tempora placeat totam autem debitis perspiciatis pariatur neque quae itaque mollitia,
     consequuntur sapiente! Recusandae?</p>
@@ -45,23 +45,31 @@
 </section>
 
 <div class="container__carousel">
-  <div class=" container__carousel-option">
-    <img src="./img/calculadora.svg" class="container__carousel-img"></img >
-    <h3 class="container__carousel-text">Calculadora</h3>
-    <p class="container__carousel-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic
-    cum ipsa?</p>
-  </div>
-  <div class="container__carousel-option container__carousel-option2">
+
+    <div >
+    <a href="./html/calculadora.html" class=" container__carousel-option">
+      <img src="./img/calculadora.svg" class="container__carousel-img"></img >
+      <h3 class="container__carousel-text">Calculadora</h3>
+      <p class="container__carousel-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic
+      cum ipsa?</p>
+    </a>
+    </div>
+  
+  <div>
+   <a href="" class="container__carousel-option">
     <img src="./img/contador.svg" class="container__carousel-img"></img>
     <h3 class="container__carousel-text">Contador</h3>
     <p class="container__carousel-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic
     cum ipsa?</p>
+   </a>
   </div>
-  <div class="container__carousel-option container__carousel-option3">
+  <div>
+   <a href="" class="container__carousel-option">
     <img src="./img/modal.svg" class="container__carousel-img"></img>
     <h3 class="container__carousel-text">Modal</h3>
     <p class="container__carousel-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic
     cum ipsa?</p> 
+   </a>
   </div>
 
   <div class="container__carousel-left">
@@ -109,7 +117,7 @@
   </main>
 
 
-  <script src="logica.js"></script>
+  <script src="logica.js" type="module"></script>
 </body>
 
 </html>
