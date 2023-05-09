@@ -4,7 +4,7 @@ import {calculadora} from "./js/calculadora.js";
 
 const d = document;
 
-d.addEventListener("DOMContentLoaded",(e)=>{
+d.addEventListener("DOMContentLoaded",()=>{
 carousel();
 calculadora();
 })
