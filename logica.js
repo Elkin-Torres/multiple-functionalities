@@ -1,5 +1,6 @@
-import carousel from "./js/logica-index.js";
-import {calculadora} from "./js/calculadora.js";
+import carousel from "./logica-index.js";
+import {calculadora} from "./calculadora.js";
+import { btnImg } from "./logica-index.js";
 
 
 const d = document;
@@ -7,4 +8,5 @@ const d = document;
 d.addEventListener("DOMContentLoaded",()=>{
 carousel();
 calculadora();
+btnImg();
 })

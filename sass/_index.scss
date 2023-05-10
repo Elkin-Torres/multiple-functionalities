@@ -2,19 +2,24 @@
 
 //Estilos del header
 .header {
+  position: relative;
   @include mixins.flex-box(row, nowrap, space-between, center);
-  padding: 0.7rem 1rem;
+  padding: 0 1rem;
   box-shadow: -1px 4px 5px -2px rgba(168, 163, 168, 1);
 
   &__logo {
     display: flex;
     gap: 0.5rem;
-    width: 15%;
+    min-width: 15%;
 
     &-img {
       filter: invert(70%) sepia(55%) saturate(6666%) hue-rotate(347deg)
         brightness(96%) contrast(96%);
       width: 25px;
+    }
+
+    &-span{
+      font-weight: var(--fw-l);
     }
   }
 
@@ -22,34 +27,139 @@
     cursor: pointer;
   }
 
-  &__options {
-    width: 75%;
-    @include mixins.flex-box(row, nowrap, space-between, center);
+}
 
-    &-element {
-      padding: 0.2rem;
-      border-radius: 2px;
+//Estilos menu de navegacion
+.nav{    
+  width: 75%;    
+  
+    &__options {
+      width: 100%;
+      @include mixins.flex-box(row, nowrap, space-between, center);
+  
+      
+      &-menu{
+        position: relative;
+        padding: 1rem 0.2rem;
+        border-radius: 2px;
+      }
+      &-menu:nth-child(7),
+      &-menu:nth-child(8){
+        color: var(--color-second);
+      }
+
+      
+      &-menu:hover{
+        cursor: pointer;
+      }
+
+      &-menu  ul{
+        position: absolute;
+        display: none;
+        cursor:pointer;
+        top: 54px;
+        left: 0;
+        
+        width: 10rem;
+        background-color: var(--color-second);
+        border-radius: 4px;
+      }
+
+      &-menu ul li:hover {
+        background-color: rgb(251, 178, 142);
+        border-radius: 4px;
+      }
+
+      &-menu ul li a{
+        font-weight: var(--fw-m);
+        padding:0.3rem 0 0.3rem 1rem ;
+      }
+
+      &-menu ul li a:hover{
+        color: white;
+      }
+
+      &-menu ul li ul{
+        position: absolute;
+        top: 10px;
+        left: 160px;
+      }
+
+      &-menu ul li ul li a{
+        font-weight: var(--fw-m);
+        padding:0.3rem 0 0.3rem 1rem ;
+      }
+      
+      &-menu:hover > ul{
+        display: block;
+      }
+
+      &-menu >ul >li {
+        padding: .3rem;
+      }
+  
     }
 
-    &-element:hover {
-      background-color: var(--color-second);
-      cursor: pointer;
-    }
-  }
+    
+  
+}
 
-  &__options:hover {
-  }
-
-  &__options li:nth-child(7),
-  &__options li:nth-child(8) {
-    color: var(--color-second);
-  }
-
-  &__options li:nth-child(7):hover,
-  &__options li:nth-child(8):hover {
-    color: #fbfbfb;
+.btnMenu{
+  
+    display: none;
+    position: fixed;
+    z-index: 999;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    padding: .2rem;
+    background-color: var(--color-second);
+    border: solid 2px black; 
+  
+  &__logo{
+    width: 2.2rem;
   }
 }
+
+.btnMenu:hover{
+  cursor: pointer;
+}
+
+.panel{
+  position: fixed;
+  z-index: 998;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background-color:var(--color-main);
+  opacity: 0.95;
+  transition: transform 0.4s ease;
+  transform: translate(-100%,0);
+  
+  &__menu{
+    @include mixins.flex-box(column,nowrap,space-evenly,center);
+    width: inherit;
+    height: inherit;
+  }
+
+  &__menu a {
+    @include mixins.flex-box(row,nowrap,center,center);
+    width: 100%;
+    height: 100%;
+    font-size: var(--font-h2);
+  }
+
+  &__menu a:hover{
+    background-color: var(--color-second);
+    color: white;
+  }
+
+  &-active{
+    transform: translate(0,0);
+  }
+}
+
+
 
 //Estilos del main
 
@@ -135,7 +245,7 @@
 
   &__contact {
     @include mixins.flex-box(column, nowrap, center, center);
-    height: 50vh;
+    min-height: 50vh;
     gap: 1rem;
 
     &-text {

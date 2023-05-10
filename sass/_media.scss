@@ -1,0 +1,46 @@
+@use "mixins";
+
+@media (max-width:950px){
+
+    .nav__options > li:nth-child(3),
+    .nav__options > li:nth-child(5){
+        display: none;
+    }
+
+    .container__carousel > div:nth-child(3){
+        display: none;
+    }
+
+    .container__contact-btns{
+       @include mixins.flex-box(column,nowrap,center,center); 
+    }
+
+}
+
+@media (max-width:700px){
+
+    .header{
+        padding: 0.8rem;
+        @include mixins.flex-box(row,nowrap,center,center);
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .btnMenu{
+        display: block;
+    }
+
+    .container__carousel{
+        width: 70%;
+    }
+
+    .container__contact-title{
+        text-align: center;
+    }
+
+    .container__carousel > div:nth-child(2){
+        display: none;
+    }
+}

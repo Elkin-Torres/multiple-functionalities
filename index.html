@@ -20,24 +20,85 @@
       <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
       <span class="header__logo-span">M-Functions</span>
     </a>
-    <ol class="header__options">
-      <li class="header__options-element">Planes</li>
-      <li class="header__options-element">Compañía</li>
-      <li class="header__options-element">Nuestra diferencia</li>
-      <li class="header__options-element">Soporte</li>
-      <li class="header__options-element">Blog</li>
-      <li class="header__options-element">Contacto</li>
-      <li class="header__options-element">Ventas</li>
-      <li class="header__options-element">Soporte</li>
-      <li class="header__options-element">Ingresar</li>
-    </ol>
+    <nav class="nav">
+      <ul class="nav__options">
+        <li class="nav__options-menu"> <a href="index.html">Inicio</a> </li>
+        <li  class="nav__options-menu"> <a href="#">Planes</a> 
+          <ul>
+            <li > <a href="#">Empresariales</a> </li>
+            <li > <a href="#">Estudiantiles</a> </li>
+            <li > <a href="#">Freelancer</a> </li>
+            <li > <a href="#">Mipymes</a> </li>
+            <li  class="nav__options-menu"> <a href="#">Universitarios</a>
+            <ul>
+              <li ><a href="#">Instituciones</a> </li>
+              <li ><a href="#">Docentes</a> </li>
+              <li ><a href="#">Estudiantes</a> </li>
+            </ul> 
+            </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="#">Compañía</a>
+          <ul>
+            <li ><a href="#">Misión</a> </li>
+            <li ><a href="#">Visión</a> </li>
+            <li ><a href="#">Historia</a> </li>
+            <li ><a href="#">Nuestros planes</a> </li>
+          </ul> 
+        </li>
+        <li class="nav__options-menu"> <a href="#">Nuestra diferencia</a> 
+          <ul>
+            <li><a href="#">Motivación</a> </li>
+            <li><a href="#">Comunidad</a> </li>
+            <li><a href="#">Elígenos</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="#">Blog</a> 
+          <ul>
+            <li><a href="#">Tu historia</a> </li>
+            <li><a href="#">Colaboradores</a> </li>
+            <li><a href="#">Clientes</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="#">Contacto</a>
+          <ul>
+            <li ><a href="#">Agendar llamada</a> </li>
+            <li ><a href="#">Chat</a> </li>
+            <li ><a href="#">Sedes</a> </li>
+            <li ><a href="#">Horario de atención</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="#">Ventas</a> </li>
+        <li class="nav__options-menu"> <a href="#">Ingresar</a> </li>
+      </ul>
+
+    </nav>
+
   </header>
+  
+  <button class="btnMenu">
+    <img class="btnMenu__logo" src="./img/menu.svg">
+  </button>
+
+  <aside class="panel">
+    <nav class="panel__menu">
+      <a href="#" class="panel__menu-options">Inicio</a>
+      <a href="#" class="panel__menu-options">Planes</a>
+      <a href="#" class="panel__menu-options">Compañía</a>
+      <a href="#" class="panel__menu-options">Nuestra diferencia</a>
+      <a href="#" class="panel__menu-options">Blog</a>
+      <a href="#" class="panel__menu-options">Contacto</a>
+      <a href="#" class="panel__menu-options">Ventas</a>
+    </nav>
+  </aside>
+
   <main>
+
 
    <section class="container">
 
 <section class="container__presentation">
-  <h1 class="container__presentation-title">¿ Qué nos hace los me jores diseñando y realizando proyectos?</h1>
+  <h1 class="container__presentation-title">¿ Qué nos hace los mejores diseñando y realizando proyectos?</h1>
   <p class="container__presentation-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis esse, impedit blanditiis
     deleniti rem ipsum facilis tempora placeat totam autem debitis perspiciatis pariatur neque quae itaque mollitia,
     consequuntur sapiente! Recusandae?</p>
@@ -47,7 +108,7 @@
 <div class="container__carousel">
 
     <div >
-    <a href="./html/calculadora.html" class=" container__carousel-option">
+    <a href="calculadora.html" class=" container__carousel-option">
       <img src="./img/calculadora.svg" class="container__carousel-img"></img >
       <h3 class="container__carousel-text">Calculadora</h3>
       <p class="container__carousel-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic

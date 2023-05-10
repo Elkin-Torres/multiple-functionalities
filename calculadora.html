@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@1,200&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Calculadora</title>
+  </head>
+
+  <body>
+
+    <header class="header">
+      <a href="index.html" class="header__logo">
+        <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
+        <span class="header__logo-span">M-Functions</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav__options">
+          <li class="nav__options-menu"> <a href="index.html">Inicio</a> </li>
+          <li  class="nav__options-menu"> <a href="#">Planes</a> 
+            <ul>
+              <li > <a href="#">Empresariales</a> </li>
+              <li > <a href="#">Estudiantiles</a> </li>
+              <li > <a href="#">Freelancer</a> </li>
+              <li > <a href="#">Mipymes</a> </li>
+              <li  class="nav__options-menu"> <a href="#">Universitarios</a>
+              <ul>
+                <li class="nav__options-menu"><a href="#">Instituciones</a> </li>
+                <li class="nav__options-menu"><a href="#">Docentes</a> </li>
+                <li class="nav__options-menu"><a href="#">Estudiantes</a> </li>
+              </ul> 
+              </li>
+            </ul>
+          </li>
+          <li class="nav__options-menu"> <a href="#">Compañía</a>
+            <ul>
+              <li class="nav__options-menu"><a href="#">Misión</a> </li>
+              <li class="nav__options-menu"><a href="#">Visión</a> </li>
+              <li class="nav__options-menu"><a href="#">Historia</a> </li>
+              <li class="nav__options-menu"><a href="#">Nuestros planes</a> </li>
+            </ul> 
+          </li>
+          <li class="nav__options-menu"> <a href="#">Nuestra diferencia</a> 
+            <ul>
+              <li class="nav__options-menu"><a href="#">Motivación</a> </li>
+              <li class="nav__options-menu"><a href="#">Comunidad</a> </li>
+              <li class="nav__options-menu"><a href="#">Elígenos</a> </li>
+            </ul>
+          </li>
+          <li class="nav__options-menu"> <a href="#">Blog</a> 
+            <ul>
+              <li class="nav__options-menu"><a href="#">Tu historia</a> </li>
+              <li class="nav__options-menu"><a href="#">Colaboradores</a> </li>
+              <li class="nav__options-menu"><a href="#">Clientes</a> </li>
+            </ul>
+          </li>
+          <li class="nav__options-menu"> <a href="#">Contacto</a>
+            <ul>
+              <li class="nav__options-menu"><a href="#">Agendar llamada</a> </li>
+              <li class="nav__options-menu"><a href="#">Chat</a> </li>
+              <li class="nav__options-menu"><a href="#">Sedes</a> </li>
+              <li class="nav__options-menu"><a href="#">Horario de atención</a> </li>
+            </ul>
+          </li>
+          <li class="nav__options-menu"> <a href="#">Ventas</a> </li>
+          <li class="nav__options-menu"> <a href="#">Ingresar</a> </li>
+        </ul>  
+      </nav>
+
+    </header>
+
+    <button class="btnMenu">
+      <img class="btnMenu__logo" src="./img/menu.svg">
+    </button>
+  
+    <aside class="panel">
+      <nav class="panel__menu">
+        <a href="#" class="panel__menu-options">Inicio</a>
+        <a href="#" class="panel__menu-options">Planes</a>
+        <a href="#" class="panel__menu-options">Compañía</a>
+        <a href="#" class="panel__menu-options">Nuestra diferencia</a>
+        <a href="#" class="panel__menu-options">Blog</a>
+        <a href="#" class="panel__menu-options">Contacto</a>
+        <a href="#" class="panel__menu-options">Ventas</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="cont">
+        <div class="cont__calculadora">
+          <div class="cont__calculadora-pantalla">
+            <span class="cont__calculadora-almacenar">-</span>
+            <div class="cont__calculadora-ingresar">
+                <span class="cont__calculadora-menos hidden">-</span>
+                <span class="cont__calculadora-numero">-</span>
+            </div>
+          </div>
+          <div class="cont__calculadora-opciones">
+            <button class="cont__calculadora-estilo cont__calculadora-ce">CE</button>
+            <button class="cont__calculadora-estilo cont__calculadora-c">C</button>
+            <button class="cont__calculadora-estilo cont__calculadora-divisor">1/X</button>
+            <button class="cont__calculadora-estilo cont__calculadora-cuadrado">x²</button>
+            <button class="cont__calculadora-estilo cont__calculadora-raiz">√</button>
+            <button class="cont__calculadora-estilo cont__calculadora-dividir">/</button>
+            <button class="cont__calculadora-estilo cont__calculadora-siete">7</button>
+            <button class="cont__calculadora-estilo cont__calculadora-ocho">8</button>
+            <button class="cont__calculadora-estilo cont__calculadora-nueve">9</button>
+            <button class="cont__calculadora-estilo cont__calculadora-por">X</button>
+            <button class="cont__calculadora-estilo cont__calculadora-cuatro">4</button>
+            <button class="cont__calculadora-estilo cont__calculadora-cinco">5</button>
+            <button class="cont__calculadora-estilo cont__calculadora-seis">6</button>
+            <button class="cont__calculadora-estilo cont__calculadora-menos-operacion">-</button>
+            <button class="cont__calculadora-estilo cont__calculadora-uno">1</button>
+            <button class="cont__calculadora-estilo cont__calculadora-dos">2</button>
+            <button class="cont__calculadora-estilo cont__calculadora-tres">3</button>
+            <button class="cont__calculadora-estilo cont__calculadora-mas">+</button>
+            <button class="cont__calculadora-estilo cont__calculadora-signo">+/-</button>
+            <button class="cont__calculadora-estilo cont__calculadora-cero">0</button>
+            <button class="cont__calculadora-estilo cont__calculadora-punto">.</button>
+            <button class="cont__calculadora-estilo cont__calculadora-igual">=</button>        
+
+
+          </div>
+        </div>
+
+        <div class="cont__aviso">
+          <p>-Los valores se pueden ingresar oprimiendo los botones en pantalla y también directamente por teclado (icluyendo las operaciones)-</p-aviso__texto>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__social footer__social--margin">
+    <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
+    <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
+    <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
+    <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
+        </div>
+        <div class="footer__copyright footer__copyright--height">
+    <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
+    <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
+        </div>
+       </footer>
+    </main>
+
+    <script src="logica.js" type="module"></script>
+  </body>
+</html>

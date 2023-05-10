@@ -4,11 +4,13 @@ href= d.querySelectorAll(".container__carousel-option"),
   text = d.querySelectorAll(".container__carousel-text"),
   lorem = d.querySelectorAll(".container__carousel-lorem"),
   left = d.querySelector(".container__carousel-left-arrow"),
-  right = d.querySelector(".container__carousel-right-arrow");
+  right = d.querySelector(".container__carousel-right-arrow"),
+  cambiarImagen = d.querySelector(".btnMenu__logo"),
+  panel = d.querySelector(".panel");
 
 const informacion = [
   {
-    href: "./html/calculadora.html",
+    href: "calculadora.html",
     img: "./img/calculadora.svg",
     texto: "Calculadora",
     lorem:
@@ -80,15 +82,6 @@ export default function carousel(){
     
     d.addEventListener("click", (e) => {
       if (e.target === right) {
-        /*  if (cont1 <= 0) {
-          cont1 = 9;
-        }
-        if (cont2 <= 0) {
-          cont2 = 9; //8
-        }
-        if (cont3 <= 0) {
-          cont3 = 9;
-        } */
     
         //Para poner en la ultima posicion del array "informacion" a la variable contadora
         if (cont1 === 0) {
@@ -167,18 +160,23 @@ export default function carousel(){
         img[2].src = informacion[cont3].img;
         text[2].textContent = informacion[cont3].texto;
         lorem[2].textContent = informacion[cont3].lorem;
-    
-        /*   if (cont3 >= informacion.length - 1) {
-          cont3 = -1;
-        }
-        if (cont2 >= informacion.length - 1) {
-          cont2 = -1;
-        }
-        if (cont1 >= informacion.length - 1) {
-          cont1 = -1;
-        } */
       }
     });
     
 }
 
+export function btnImg(){
+
+let contImg = true;
+  cambiarImagen.addEventListener("click",(e)=>{
+    if(contImg){
+      cambiarImagen.src = "./img/close-menu.svg";
+      panel.classList.toggle("panel-active");
+      contImg = false;
+    } else {
+      cambiarImagen.src = "./img/menu.svg";
+      panel.classList.toggle("panel-active");
+      contImg = true;
+    }
+  })
+}
