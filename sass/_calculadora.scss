@@ -152,10 +152,16 @@
 
 
 .footer__social.footer__social--margin{
+    position: absolute;
+    bottom: 4vh;
     margin-top: 0;
     height: 8vh;
 }
 
 .footer__copyright.footer__copyright--height{
+    position: absolute;
     height: 4vh;
+    width: 100%;
+    bottom: 0;
+
 }

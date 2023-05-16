@@ -56,6 +56,7 @@
       &-menu  ul{
         position: absolute;
         display: none;
+        z-index: 10;
         cursor:pointer;
         top: 54px;
         left: 0;
@@ -302,10 +303,12 @@
 //Estilos footer
 
 .footer {
+  width: 100%;
       
   &__social {
     margin-top: 5rem;
     height: 15vh;
+    width: 100%;
     @include mixins.flex-box(row, nowrap, center, center);
     gap: 1rem;
     background-color: var(--color-second);
@@ -330,6 +333,7 @@
   &__copyright {
     @include mixins.flex-box(row, nowrap, center, center);
           height: 8vh;
+          width: 100%;
   }
 
   &__img {

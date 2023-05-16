@@ -15,7 +15,12 @@
        @include mixins.flex-box(column,nowrap,center,center); 
     }
 
+    .modal__info{
+        width: 60%;
+    }
+
 }
+
 
 @media (max-width:700px){
 
@@ -43,4 +48,108 @@
     .container__carousel > div:nth-child(2){
         display: none;
     }
+
+    .resenias-cont{
+
+        &__title h1{
+            font-size: var(--font-h2);
+        }
+        &__img{
+            width: 150px;
+            height: 150px;
+            top: 8.5rem;
+        }
+
+        &__film{
+            margin-top: 10rem;
+        }
+
+        &__ampliar{
+            margin-top: 3.5rem;
+        }
+
+        &__btns{
+            top: 11rem;
+            gap: 19rem;
+        }
+    }
+
+    .modal__info{
+        width: 70%;
+    }
+
+    .modal__text{
+        line-height: 1.4;
+    }
+}
+
+@media (max-width:450px){
+
+    .panel__menu a{
+        font-size: var(--font-h3);
+    }
+
+    .cont-container{
+
+        &__title{
+            font-size: var(--font-h1);
+        }
+
+        &__numero{
+            font-size: 5rem;
+        }
+
+        &__btns{
+            width: 15rem;
+        }
+
+        &__btn{
+            padding: 0.2rem;
+        }
+    }
+
+    .resenias-cont{
+
+        &__title h1{
+            font-size: var(--font-h3);
+            font-weight: var(--fw-l);
+            min-width: 300px;
+        }
+        &__img{
+            width: 140px;
+            height: 140px;
+            top: 8.5rem;
+        }
+
+        &__film{
+            margin-top: 10rem;
+        }
+
+        &__text{
+            line-height: 1.2;
+        }
+
+        &__ampliar{
+            margin-top: 3.5rem;
+        }
+
+        &__btns{
+            top: 10rem;
+            gap: 15rem;
+        }
+    }
+    
+
+    .modal__info{
+        min-width: 297px;
+        max-height: 590px;      
+        overflow: hidden; 
+    }
+
+    .modal__text{
+        overflow-y: scroll;
+        padding: .6rem;
+    }
+
+
 }

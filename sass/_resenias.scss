@@ -1,0 +1,143 @@
+@use "mixins";
+
+.resenias-cont{
+    @include mixins.flex-box(row,nowrap,center,center);
+    width: 80%;
+    margin: 0 auto;
+    height: calc(100vh - 133.21px);
+
+    &__title {
+        height: 450px;
+        width: 30rem;
+        box-shadow: 11px 14px 15px -1px rgba(0,0,0,0.48);
+    }
+
+    &__title h1{
+        position: relative;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &__info{
+        @include mixins.flex-box(column, nowrap,center,center);
+    }
+
+    &__img{
+        position: absolute;
+        z-index: 2;
+        height: 180px;
+        width: 180px;
+        top: 9rem;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+
+    &__img:hover{
+        box-shadow: 0px 0px 10px 10px #ec731e;
+    }
+
+    &__film{
+        margin-top: 12rem;
+    }
+
+    &__text{
+        height: 5.625rem;
+        width: 90%;
+       text-align: center; 
+    }
+
+    &__btns{
+        @include mixins.flex-box(row, nowrap,space-between, center);
+        position: absolute;
+        z-index: 1;
+        top: 13rem;
+        height: 1rem;
+        gap: 20rem;
+        margin-top: 1.5rem;
+    }
+
+    &__btn{
+        width: 1.375rem;
+          border: none;
+    }
+
+    &__btn:hover{
+        cursor: pointer;
+    }
+
+    &__btn:active{        
+        filter: invert(70%) sepia(55%) saturate(6666%) hue-rotate(347deg)
+          brightness(96%) contrast(96%);
+    }
+
+    &__ampliar{
+        margin-top: 1rem;
+        padding: .2rem;
+        color: var(--color-second);
+        border: solid 1px var(--color-main);
+        border-radius: 4px;
+    }
+
+    &__ampliar:hover{
+        background-color: var(--color-second);
+        color: white;
+        cursor: pointer;
+
+    }
+
+}
+
+//modal
+.modal{
+
+    @include mixins.flex-box(row,nowrap,center,center);
+    display: none;
+    
+    position: absolute;
+    top: 0;
+    z-index: 997;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #757a79;
+    opacity: 0.9;
+
+    &__info{
+    @include mixins.flex-box(column,nowrap,center,center);
+    position: relative;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #222831;
+    color: white;
+    }
+
+    &__title{
+        margin-bottom: .5rem;
+        color: var(--color-second);
+    }
+
+    &__year{
+        margin-bottom: .3rem;
+    }
+
+    &__text{
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    &__cerrar{
+        position: absolute;
+        padding: .4rem;
+        top: 6px;
+        right: 6px;
+        border: 1px solid var(--color-second);
+        border-radius: 50%;
+        color: var(--color-second);
+    }
+
+    &__cerrar:hover{
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+}

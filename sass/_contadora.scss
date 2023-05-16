@@ -1,0 +1,37 @@
+@use "mixins";
+
+.cont-container{
+    @include mixins.flex-box(column,nowrap,center,center);
+    min-height: calc(100vh - 133.21px);
+
+    &__title{
+        font-size: 40px;
+        padding-bottom: 1rem;
+    }
+
+    &__numero{
+        font-size: 6rem;
+    }
+
+    &__btns{
+        @include mixins.flex-box(row,nowrap,space-between, center);
+        width: 17rem;
+        margin-top: 1.5rem;
+    }
+
+    &__btn{
+        padding: .4rem;
+        border-radius: 4px;
+        border: solid 1px black;
+        font-family: var(--font-secondary);
+        font-weight: var(--fw-l);
+        font-size: .875rem;
+        cursor: pointer;
+    }
+
+    &__btn:hover{
+        background-color: var(--color-second);
+        color: white;
+        transform: scale(1.2);
+    }
+}

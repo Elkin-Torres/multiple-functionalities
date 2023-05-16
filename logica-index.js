@@ -17,16 +17,16 @@ const informacion = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa? ",
   },
   {
-    href:"",
+    href:"contadora.html",
     img: "./img/contador.svg",
     texto: "Contador",
     lorem:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa?",
   },
   {
-    href:"",
-    img: "./img/modal.svg",
-    texto: "Modal",
+    href:"resenias.html",
+    img: "./img/resenia.svg",
+    texto: "Reseñas",
     lorem:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa?",
   },
@@ -95,30 +95,25 @@ export default function carousel(){
         }
     
         cont1 -= 1;
-        console.log(`cont1: ${cont1}`);
     
         //Se inserta la información en los contenedores
         href[0].href = informacion[cont1].href;
         img[0].src = informacion[cont1].img;
         text[0].textContent = informacion[cont1].texto;
         lorem[0].textContent = informacion[cont1].lorem;
-        /* console.log(cont1); */
         cont2 -= 1;
-        console.log(`cont2: ${cont2}`);
         
         href[1].href = informacion[cont2].href;
         img[1].src = informacion[cont2].img;
         text[1].textContent = informacion[cont2].texto;
         lorem[1].textContent = informacion[cont2].lorem;
-        /* console.log(cont2); */
-        cont3 -= 1;
-        console.log(`cont3: ${cont3}`);
+        cont3 -= 1;        
     
         href[2].href = informacion[cont3].href;
         img[2].src = informacion[cont3].img;
         text[2].textContent = informacion[cont3].texto;
         lorem[2].textContent = informacion[cont3].lorem;
-        /* console.log(cont3); */
+       
       }
     
       //Para volver al inicio del carrousel de imagenes, si se está al final de éste y se oprime "left"
@@ -139,7 +134,6 @@ export default function carousel(){
         }
     
         cont1 += 1;
-        console.log(`cont1: ${cont1}`);
     
         //Se inserta la información en los contenedores
         href[0].href = informacion[cont1].href;
@@ -147,14 +141,12 @@ export default function carousel(){
         text[0].textContent = informacion[cont1].texto;
         lorem[0].textContent = informacion[cont1].lorem;
         cont2 += 1;
-        console.log(`cont2: ${cont2}`);
 
         href[1].href = informacion[cont2].href;
         img[1].src = informacion[cont2].img;
         text[1].textContent = informacion[cont2].texto;
         lorem[1].textContent = informacion[cont2].lorem;
         cont3 += 1;
-        console.log(`cont3: ${cont3}`);
     
         href[2].href = informacion[cont3].href;
         img[2].src = informacion[cont3].img;
