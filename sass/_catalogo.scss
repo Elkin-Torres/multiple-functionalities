@@ -1,0 +1,78 @@
+@use "mixins";
+
+.catalogue-cont{
+    @include mixins.flex-box(column,nowrap,flex-start,center);
+    min-height: calc(100vh - 133.21px);
+    width: 90%;
+    margin: 0 auto;
+
+    &__title{
+        margin-top: 2rem;
+    }
+
+    &__btns{
+        @include mixins.flex-box(row, nowrap,center,center);
+        margin: 1rem 1rem 0;
+        gap: .5rem;
+    }
+
+    &__btn{
+        padding: .2rem;
+        border-radius: 4px;
+        color: var(--color-second);
+        border: 1px solid var(--color-second);
+    }
+
+    &__btn:hover{
+        cursor: pointer;
+        background-color: var(--color-second);
+        color: white;
+        margin: 0 1rem;
+    }
+
+    &__info{
+        height: auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 2rem 0 0 ;
+    }
+
+    &__car{
+        @include mixins.flex-box(row,nowrap,center,center);
+        margin: 2rem auto;
+        padding: 0 .5rem;
+        height: 170px;
+        overflow: hidden;
+        
+      
+
+        &-img img{
+            height: 170px;
+            width: 170px;
+            border: 2px solid var(--color-second);
+        }
+
+        &-info{
+            @include mixins.flex-box(column,nowrap,space-between,center);
+            margin-left: .6rem;
+            width: 60%;
+            height: inherit;
+        }
+
+        &-title{
+            @include mixins.flex-box(row,nowrap,space-between,center);
+            width: 100%;
+            border-bottom: 1px solid black;
+        }
+
+        &-title span{
+            color: var(--color-second);
+        }
+
+        &-text{
+            margin: auto 0;
+            line-height: 1.2;
+        }
+    }
+}

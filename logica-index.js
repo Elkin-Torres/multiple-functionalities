@@ -31,9 +31,9 @@ const informacion = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa?",
   },
   {
-    href:"",
-    img: "",
-    texto: "aca va el texto4",
+    href:"catalogo.html",
+    img: "./img/catalogo.svg",
+    texto: "Catálogo",
     lorem:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa?",
   },

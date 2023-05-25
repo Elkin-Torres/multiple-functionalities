@@ -89,9 +89,6 @@ export function resenias(){
     })
 
     d.addEventListener("click",(e)=>{
-       /*  if(e.target === btnAbrir){
-            modal.style.display = "flex"; 
-        } */
 
         switch (e.target){
             case btnAbrir:
