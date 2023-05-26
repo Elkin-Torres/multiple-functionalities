@@ -4,7 +4,8 @@ import { btnImg } from "./logica-index.js";
 import {contadora} from "./contadora.js";
 import { resenias } from "./resenias.js";
 import {compania} from "./compania.js";
-import {catalogo} from "./catalogo.js";
+//import {catalogo} from "./catalogo.js";
+import {video} from "./video.js";
 
 
 const d = document;
@@ -16,5 +17,6 @@ btnImg();
 contadora();
 resenias();
 compania();
-catalogo();
+//catalogo();
+video();
 })

@@ -1,0 +1,57 @@
+@use "mixins";
+
+
+.video-cont{
+
+    
+    @include mixins.flex-box(row,nowrap,center,center);
+    width: 100%;
+    margin: 0 auto;
+    height: calc(100vh - 133.21px);
+    &::after{
+        content: "";
+        position: absolute;
+        height: calc(100vh - 133.21px);
+        width: 100%;
+        background-color: black;
+        opacity: 0.7;
+        z-index: 1;
+    }
+
+    &__cont-video{
+        width: 100%;
+    }
+    
+    &__video{
+        object-fit: cover;
+        height: calc(100vh - 133.21px);    
+    }
+
+    &__titulo{
+        position: absolute;
+        font-weight: var(--fw-l);
+        color: white;
+        z-index: 2;
+    }
+
+    &__options{
+        position: absolute;
+        z-index: 2;
+        color: white;
+        bottom: 7.5rem;
+        border-radius: 8px;
+        background-color: white;   
+    }
+    
+    &__options span{
+        padding: 0 .5rem;
+        border-radius: 4px;
+        color: var(--color-main);
+        font-weight: var(--fw-l);
+    }
+
+        &__bc{
+            background-color: var(--color-second);
+            opacity: 0.7;
+        }
+}

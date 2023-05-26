@@ -26,7 +26,7 @@ const album = [
         alt:"vehiculo Mazda CX30",
         nombre:"Mazda CX30",
         modelo:"2023",
-        descripcion:"Motor 2.5L con Turbo de Presión Dinámica, Sistema Inteligente AWD, Control G-Vectoring. Conoce el balance entre los motores eSkyactivG con el sistema Mild Hybrid. "
+        descripcion:"Motor 2.5L con Turbo de Presión Dinámica, Sistema Inteligente AWD, Control G-Vectoring. Conoce el balance entre los motores eSkyactivG con el sistema Mild Hybrid."
     },
     {
         marca:"Mazda",
