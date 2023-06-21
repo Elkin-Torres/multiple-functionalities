@@ -65,7 +65,7 @@ function cambiarOperacion(signo){
     let span = d.createElement("span");
     span.classList.add("signoAlmacenar");
     span.textContent= signo;
-    almacenar.insertAdjacentElement("beforeend", span); /********Aca***************/
+    almacenar.insertAdjacentElement("beforeend", span); 
   }else{
     let span = d.createElement("span");
     span.classList.add("signoAlmacenar");

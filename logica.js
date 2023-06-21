@@ -6,6 +6,8 @@ import { resenias } from "./resenias.js";
 import {compania} from "./compania.js";
 import {catalogo} from "./catalogo.js";
 import {video} from "./video.js";
+import { diferencia } from "./nuestra-diferencia.js";
+import {texto} from "./texto.js";
 
 
 const d = document;
@@ -17,6 +19,8 @@ btnImg();
 contadora();
 resenias();
 compania();
-catalogo();
 video();
+diferencia();
+texto();
+catalogo();
 })

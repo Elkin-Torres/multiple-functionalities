@@ -1,28 +1,25 @@
 const d = document,
     reproductor = d.querySelector(".video-cont__video"),
     pause = d.querySelector(".video-cont__pause"),
-    play = d.querySelector(".video-cont__play"),
-    options = d.querySelector(".video-cont__options");
+    play = d.querySelector(".video-cont__play");
 
 
 export function video (){
 
-    options.addEventListener("click",(e)=>{
-        const option = e.target.classList;
-        console.log(option);
+    d.addEventListener("click",(e)=>{
+        const option = e.target;
+        //console.log(option);
 
-        if( option.contains("video-cont__pause") ){
+        if( option.classList.contains("video-cont__pause") ){
             reproductor.pause();
             play.classList.remove("video-cont__bc");
             pause.classList.add("video-cont__bc");
-        } else{
+        } else if(option.classList.contains("video-cont__play")){
             reproductor.play();
             play.classList.add("video-cont__bc");
             pause.classList.remove("video-cont__bc");
         }
        
-    });
-
-    
+    });    
 
 }

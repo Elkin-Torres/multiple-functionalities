@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@1,200&display=swap"
       rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Catálogo</title>
+      <link rel="stylesheet" href="./css/style.css">
+    <title>Texto aleatorio</title>
 </head>
 <body>
-    <header class="header header-catalogue">
+    <header class="header">
         <a href="index.html" class="header__logo">
           <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
           <span class="header__logo-span">M-Functions</span>
@@ -73,7 +72,7 @@
         </nav>
     
       </header>
-      
+
       <button class="btnMenu">
         <img class="btnMenu__logo" src="./img/menu.svg">
       </button>
@@ -91,35 +90,25 @@
       </aside>
 
       <main>
-        <section class="catalogue-cont">
-            <div class="catalogue-cont__title">
-                <h1>Catálogo vehículos</h1>
+
+        <section class="text-cont">
+            <h2 class="text-cont__title">¡Experiencias de éxito empresarial!</h2>
+            <form class="text-cont__form">
+                <label for="text-cont__statement" class="text-cont__label">Ingresa el número de experiencias que deseas conocer: </label>
+                <input type="number" name="text-cont__statement" id="text-cont__statement" placeholder="#" pattern="^[0-9]*[0-9]$" autocomplete="off" required>
+                <button type="submit" class="text-cont__btn">Enviar</button>
+            </form>
+            <div class="text-cont__note">
+              <p class="text-cont__note text">Nota: Ten en cuenta que tenemos 18 experiencias que podemos contarte, si escoges un número mayor, solo te mostraremos una</p>
             </div>
-            <div class="catalogue-cont__btns">
+            <div class="text-cont__alert">
+              <p class="text-cont__alert-text">¡Solo se pueden ingresar números!</p>
             </div>
-            <section class="catalogue-cont__info">
-              <!--Inicio informacion vehiculo-->
-  <!--               <div class="catalogue-cont__car">
-                  <div class="catalogue-cont__car-img">
-                    <img src="./img/mazda3.png" alt="vehiculo Mazda 3">
-                  </div>
-                  <div class="catalogue-cont__car-info">
-                    <div class="catalogue-cont__car-title">
-                    <h3>Mazda 3</h3>
-                      <span>2022</span>
-                    </div>
-                    <div class="catalogue-cont__car-text">
-                    <p>Un diseño que evoca una sola pincelada fluida con una ingeniería que logra un nivel de belleza superior.</p>
-                    </div>
-        
-                  </div>
-                </div> -->
-              <!--Fin iformacion vehiculo-->
-            </section>
+
         </section>
 
 
-        <footer class="footer footer-position">
+        <footer class="footer footer-resenias">
             <div class="footer__social footer__social--margin">
         <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
         <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
@@ -132,8 +121,8 @@
             </div>
            </footer>
       </main>
+    
 
-
-    <script src="logica.js" type="module"></script>
+      <script src="logica.js" type="module"></script>
 </body>
 </html>

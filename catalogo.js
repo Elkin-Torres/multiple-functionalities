@@ -1,8 +1,12 @@
 const d = document,
     seccion = d.querySelector(".catalogue-cont__info"),
+    btns = d.querySelectorAll(".catalogue-cont__btn"),
     btnsContainer = d.querySelector(".catalogue-cont__btns");
     
 //Informacion vehiculos
+
+//Para imprimir los vehiculos dinamicamente en "catalogo.html"
+
 const album = [
     {
         marca:"Mazda",
@@ -111,66 +115,70 @@ const album = [
 
 ]
 
-//Para imprimir los vehiculos dinamicamente en "catalogo.html"
-function impCar(albumItem){
-    let albumMap = albumItem.map(function(obj){
-        return `<div class="catalogue-cont__car">
-        <div class="catalogue-cont__car-img">
-          <img src=${obj.img} alt=${obj.alt}>
-        </div>
-        <div class="catalogue-cont__car-info">
-          <div class="catalogue-cont__car-title">
-           <h3>${obj.nombre}</h3>
-            <span>${obj.modelo}</span>
-          </div>
-          <div class="catalogue-cont__car-text">
-            <p>${obj.descripcion}</p>
-          </div>
-        </div>
-      </div>`;
-      });
-      albumMap = albumMap.join("");
-    //console.log(albumMap);
+export function catalogo(){    
+        
+        function impCar(albumItem){
+            let albumMap = albumItem.map(function(obj){
+                return `<div class="catalogue-cont__car">
+                <div class="catalogue-cont__car-img">
+                  <img src=${obj.img} alt=${obj.alt}>
+                </div>
+                <div class="catalogue-cont__car-info">
+                  <div class="catalogue-cont__car-title">
+                   <h3>${obj.nombre}</h3>
+                    <span>${obj.modelo}</span>
+                  </div>
+                  <div class="catalogue-cont__car-text">
+                    <p>${obj.descripcion}</p>
+                  </div>
+                </div>
+              </div>`;
+              });
+            albumMap = albumMap.join("");
+            //console.log(albumMap);
+                
+                
+                seccion.innerHTML = albumMap;     
 
-    seccion.innerHTML = albumMap;   
-}
-
-
-export function catalogo(){
-
-    //Se identifican los registros unicos de "marcas" en el array de objetos "album" y se crea un nuevo array con ellos
-    const marcasAlbum = album.reduce(function(marcas, vehiculo){
-        !marcas.includes(vehiculo.marca)? marcas.push(vehiculo.marca):"";
-
-        return marcas;
-    },["Todos"]);
-
-    //con el nuevo array, se crean dinamicamente los botones para poder hacer el filtro de los vehiculos mas adelante
-    const filtroMarcas = marcasAlbum.map(function(marca){
-     return `<button class="catalogue-cont__btn" data-id=${marca}>${marca}</button>`
-    }).join("");
-
-    btnsContainer.innerHTML = filtroMarcas;    
-
-
-
- impCar(album);
-
-//Se seleccionan en esta parte los botones creados dinamicamente
-const btns = d.querySelectorAll(".catalogue-cont__btn");
-
-//Se crea el filtro para que el usuario pueda seleccionar que marca de vehiculo quiere ver
-btns.forEach(function(btn){
-    btn.addEventListener("click",(e)=>{
-        const dataId = e.currentTarget.dataset;
-        const albumFilter = album.filter( car => car.marca === dataId.id);
-        if(dataId.id === "Todos"){
-            impCar(album);
-        }else{
-            impCar(albumFilter);
+        
+        
         }
-    })
-})
+             //Se identifican los registros unicos de "marcas" en el array de objetos "album" y se crea un nuevo array con ellos
+            const marcasAlbum = album.reduce(function(marcas, vehiculo){
+                !marcas.includes(vehiculo.marca)? marcas.push(vehiculo.marca):"";
+        
+                return marcas;
+            },["Todos"]);
+        
+            //con el nuevo array, se crean dinamicamente los botones para poder hacer el filtro de los vehiculos mas adelante
+            const filtroMarcas = marcasAlbum.map(function(marca){
+             return `<button class="catalogue-cont__btn" data-id=${marca}>${marca}</button>`
+            }).join("");
+        
+            btnsContainer.innerHTML = filtroMarcas;    
+        
+         
+        
+         impCar(album);
+        
+         //Se seleccionan en esta parte los botones creados dinamicamente
+        const btns = d.querySelectorAll(".catalogue-cont__btn"); 
+        
+        //Se crea el filtro para que el usuario pueda seleccionar que marca de vehiculo quiere ver
+        btns.forEach(function(btn){
+            btn.addEventListener("click",(e)=>{
+                const dataId = e.currentTarget.dataset;
+                const albumFilter = album.filter( car => car.marca === dataId.id);
+                if(dataId.id === "Todos"){
+                    impCar(album);
+                }else{
+                    impCar(albumFilter);
+                }
+            })
+        })
+
+    
+
 
 
 }
