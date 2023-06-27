@@ -973,6 +973,105 @@ span {
   border-radius: 0.25rem;
 }
 
+.list-cont {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: calc(100vh - 133.21px);
+  width: 80%;
+  margin: 0 auto;
+}
+.list-cont__container {
+  width: 450px;
+  margin-top: 3rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  -moz-box-shadow: 0px 3px 0px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 0px 3px rgba(0, 0, 0, 0.25);
+}
+.list-cont__alert {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.list-cont__alert-text {
+  visibility: hidden;
+  width: 250px;
+  margin: 0 auto;
+  background-color: rgb(250, 128, 114);
+  border-radius: 4px;
+}
+.list-cont__success-text {
+  background-color: rgba(0, 187, 68, 0.5);
+}
+.list-cont__title {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--color-second);
+}
+.list-cont__cont-input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.list-cont__input-text {
+  width: 300px;
+  border-color: var(--color-second);
+}
+.list-cont__cont-items {
+  margin-top: 1rem;
+}
+.list-cont__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.list-cont__text {
+  display: inline-block;
+  width: 21.875rem;
+  margin-left: 1rem;
+}
+.list-cont__btn-add {
+  padding: 0.3rem;
+  background-color: var(--color-second);
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+.list-cont__img {
+  display: inline;
+  width: 18px;
+}
+.list-cont__img-delete {
+  filter: invert(13%) sepia(96%) saturate(6482%) hue-rotate(358deg) brightness(89%) contrast(128%);
+}
+.list-cont__img-edit {
+  filter: invert(78%) sepia(72%) saturate(1561%) hue-rotate(61deg) brightness(84%) contrast(89%);
+}
+.list-cont__btn-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.list-cont__btn-delete {
+  visibility: hidden;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 4px;
+  background-color: var(--color-second);
+  color: white;
+}
+
 .catalogue-cont {
   display: flex;
   flex-direction: column;

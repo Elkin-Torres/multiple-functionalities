@@ -1,0 +1,100 @@
+@use "mixins";
+
+.list-cont{
+    @include mixins.flex-box(column,nowrap,flex-start,center);
+    min-height: calc(100vh - 133.21px);
+    width: 80%;
+    margin: 0 auto;
+
+    &__container{
+        width: 450px;
+        margin-top: 3rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+        -moz-box-shadow: 0px 3px 0px 3px rgba(0,0,0,0.25);
+        box-shadow: 0px 3px 0px 3px rgba(0,0,0,0.25);
+    }
+
+    &__alert{
+        margin-bottom: .5rem;
+        text-align: center;        
+    }
+
+    &__alert-text{
+        visibility: hidden;
+        width: 250px;
+        margin: 0 auto;
+        background-color: rgb(250,128,114);
+        border-radius: 4px;
+    }
+
+    &__success-text{
+       background-color: rgba(0, 187, 68, 0.5); 
+    }
+
+    &__title{
+        margin-bottom: .5rem;
+        text-align: center;
+        color: var(--color-second)
+    }
+
+    &__cont-input{
+        @include mixins.flex-box(row,nowrap,center,center);
+        gap: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    &__input-text{
+        width: 300px;
+        border-color: var(--color-second);        
+    }
+
+    &__cont-items{
+        margin-top: 1rem;
+    }
+
+    &__item{
+        @include mixins.flex-box(row,nowrap,center,center);
+    }
+
+    &__text{
+        display: inline-block;
+        width: 21.875rem;
+        margin-left: 1rem;
+    }
+
+    &__btn-add{
+        padding: .3rem;
+        background-color: var(--color-second);
+        color: white;
+        border: none;
+        border-radius: 4px;
+    }
+
+    &__img{
+        display: inline;
+        width: 18px;
+    }
+    
+    &__img-delete{
+        filter: invert(13%) sepia(96%) saturate(6482%) hue-rotate(358deg) brightness(89%) contrast(128%);
+    }
+
+    &__img-edit{
+        filter: invert(78%) sepia(72%) saturate(1561%) hue-rotate(61deg) brightness(84%) contrast(89%);
+    }
+
+    &__btn-cont{
+        @include mixins.flex-box(row, nowrap,center,center);
+        margin-top: 1rem;
+    }
+
+    &__btn-delete{
+        visibility: hidden;
+        border: none;
+        padding: .3rem;
+        border-radius: 4px;
+        background-color: var(--color-second);
+        color: white;
+    }
+}

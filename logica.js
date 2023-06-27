@@ -8,6 +8,7 @@ import {catalogo} from "./catalogo.js";
 import {video} from "./video.js";
 import { diferencia } from "./nuestra-diferencia.js";
 import {texto} from "./texto.js";
+import { listaViveres } from "./lista.js";
 
 
 const d = document;
@@ -21,6 +22,7 @@ resenias();
 compania();
 video();
 diferencia();
+listaViveres();
 texto();
 catalogo();
 })

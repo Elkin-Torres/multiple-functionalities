@@ -52,9 +52,9 @@ const informacion = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa? ",
   },
   {
-    href:"",
-    img: "",
-    texto: "aca va el texto7",
+    href:"lista.html",
+    img: "./img/lista.svg",
+    texto: "Lista de víveres",
     lorem:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa? ",
   },
