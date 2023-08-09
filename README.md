@@ -7,12 +7,20 @@ Multiple-functionalities es una propuesta de diseño y realización de proyectos
 
 
 ### Construido con...
--Javascript
--HTML
--CSS
--SASS
+<ul>
+  <li>Javascript</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>SASS</li>
+</ul>
 ### APIs  y librerias usadas:
--[Unsplash API](https://unsplash.com/developers "Unsplash")
--[Frankfurter API](https://www.frankfurter.app/docs/ "Frankfurter")
--[Animate](https://animate.style/ "Animate")
--[wow.js](https://wowjs.uk/ "wow.js")
+<ul>
+  <li>[Unsplash API](https://unsplash.com/developers "Unsplash")</li>
+  <li>[Frankfurter API](https://www.frankfurter.app/docs/ "Frankfurter")</li>
+  <li>[Animate](https://animate.style/ "Animate")</li>
+  <li>[wow.js](https://wowjs.uk/ "wow.js")</li>
+</ul>
+
+
+
+
