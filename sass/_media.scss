@@ -1,12 +1,15 @@
 @use "mixins";
 
+/*********** media 950px starts ************/
 @media (max-width:950px){
 
+    /*nav__options*/
     .nav__options > li:nth-child(3),
     .nav__options > li:nth-child(5){
         display: none;
     }
 
+    /*Index.html starts*/
     .container__carousel > div:nth-child(3){
         display: none;
     }
@@ -14,38 +17,82 @@
     .container__contact-btns{
        @include mixins.flex-box(column,nowrap,center,center); 
     }
+    /*Index.html ends*/
 
+    /*resenias.html*/
     .modal__info{
         width: 60%;
     }
 
+    /*catalogo.html*/
     .catalogue-cont{
-
         &__info{
             grid-template-columns:1fr;
             width: 80%;
         }
-
     }
 
+    /*Conversor.html*/
+    .conversor-cont__btns{
+        width: 30%;
+    }
+
+    /*planes.html starts*/
+    .planes-cont{
+
+        &__empresariales{
+            height: 42.5rem;
+
+            &::after{
+                height: inherit;
+            }
+        }
+
+        &__business-cont{
+            @include mixins.flex-box(column,nowrap,center,center);
+            margin-bottom: 1rem;
+
+            & div h2{
+                margin: 1rem 0;
+            }
+
+            & div{
+                width: 80%;
+            }
+        }
+
+        &__freelancer-cont{
+            height: 30rem;
+        }
+
+        &__miPymes-items{
+            width: 45%;
+        }
+    }
+    /*planes.html ends*/
+
+
 }
+/*********** media 950px ends ************/
 
 
+/*********** media 700 starts ************/
 @media (max-width:700px){
-
+    /*header*/
     .header{
         padding: 0.8rem;
         @include mixins.flex-box(row,nowrap,center,center);
     }
-
+    /*nav*/
     .nav{
         display: none;
     }
-
+    /*btnMenu*/
     .btnMenu{
         display: block;
     }
 
+    /*index.html starts*/
     .container__carousel{
         width: 70%;
     }
@@ -57,15 +104,17 @@
     .container__carousel > div:nth-child(2){
         display: none;
     }
+    /*index.html ends*/
 
+    /*resenia.html starts*/
     .resenias-cont{
 
         &__title h1{
             font-size: var(--font-h2);
         }
         &__img{
-            width: 150px;
-            height: 150px;
+            width: 9.375rem;
+            height: 9.375rem;
             top: 8.5rem;
         }
 
@@ -90,15 +139,21 @@
     .modal__text{
         line-height: 1.4;
     }
+    /*resenia.html ends*/
 
+    /*lista.html*/
+    .list-cont__container{
+        width: 25rem;
+    }
+
+    /*catalogo.html*/
     .catalogue-cont{
-
         &__info{
             width: 100%;
         }
-
     }
 
+    /*nuestra-diferencia.html starts*/
     .cont-diferencia__contenido{
         @include mixins.flex-box(column,nowrap,center,center);
         width: 100%;
@@ -113,9 +168,10 @@
     .cont-diferencia__informacion{
         width: 80%;
     }
+    /*nuestra-diferencia.html ends*/
 
+    /*texto.html*/
     .text-cont{
-
         &__title{
             text-align: center;
         }
@@ -124,32 +180,143 @@
             text-align: center;
         }
     }
-}
 
-@media (max-width:450px){
-
-    .header-catalogue{
-        min-width: 356px;
+    /*Conversor.html starts*/
+    .conversor-cont__input{
+        width: 10rem;
+        height: 1.625rem;
     }
 
+    .conversor-cont__btns{
+        width: 40%;
+    }
+
+    .conversor-cont__info-currency {
+        width: 23.75rem;
+        margin: 0 auto;
+    }
+
+    .conversor-cont__info-currency h3,
+    .conversor-cont__info-currency h4{
+        width: 11.875rem;
+    }
+    /*Conversor.html ends*/
+
+    /*library.html*/
+    .library-cont__input{
+        width: 13.75rem;
+    }
+
+    /*planes.html starts*/
+    .planes-cont{
+        &__empresariales{
+            height: 53.125rem;
+        }
+
+        &__students-items{
+            align-items: flex-start;
+        }
+
+        &__student-item{
+            width: 45%;
+        }
+
+        &__freelancer-cont{
+            height: 41.25rem;
+        }
+
+        &__items-freelancer{
+            margin-top: .5rem;
+        }
+
+        &__miPymes-info{
+            flex-direction: column;
+        }
+
+        &__miPymes-items{
+            width: 80%;
+        }
+
+        &__academic-cont{
+            height: 45.625rem;
+        }
+
+        &__academic-items{
+            align-items: flex-start;
+        }
+
+        &__academic-item{
+            width: 45%;
+        }
+    }
+    /*planes.html ends*/
+
+    /*blog.html starts*/
+    .blog-cont__form{
+        width: 100%;
+
+        & > input,
+        & > textarea,
+        & > legend{
+            width: 70%;
+        }
+    }
+
+    .blog-cont__error.activar{
+        width: 70%;
+    }
+
+    .blog-cont__offers div{
+        width: 100%;
+        margin: 2rem auto 0;
+    }
+    /*blog.html ends*/
+    /*contacto.html*/
+    .contact-cont__form,
+    .contact-cont__form input, 
+    .contact-cont__form textarea, 
+    .contact-cont__form legend{
+        min-width: 19.625rem;
+    }
+}
+/*********** media 700 ends ************/
+
+/*********** media 450px starts ************/
+@media (max-width:450px){
+    /*header starts*/
+    .header-catalogue{
+        min-width: 22.25rem;
+    }
+    
+    .header-conversor{
+        min-width: 22.1875rem;
+    }
+    /*header ends*/
+
+    /*panel__menu*/
     .panel__menu a{
         font-size: var(--font-h3);
     }
 
+    /*index.html*/
     .container{
-        min-width: 300px;
+        min-width: 18.75rem;
     }
 
+    /*calculadora.html*/
+    .cont{
+        min-width: 22.1875rem;
+    }
+
+    /*compania.html*/
     .comp-container{
-        width: 90%;
-
-        &__info{
-            width: 80%;
-            min-width: 216px;
-        }
+        min-width: 22.1875rem;
+        margin: 1rem 0;
     }
 
+    /*contadora.html*/
     .cont-container{
+        min-width: 21.875rem;
 
         &__title{
             font-size: var(--font-h1);
@@ -168,16 +335,22 @@
         }
     }
 
+    /*resenias.html starts*/
     .resenias-cont{
+        min-width: 21.875rem;
+
+        &__title{
+            width: 20.625rem;
+        }
 
         &__title h1{
             font-size: var(--font-h3);
             font-weight: var(--fw-l);
-            min-width: 300px;
+            min-width: 18.75rem;
         }
         &__img{
-            width: 140px;
-            height: 140px;
+            width: 8.75rem;
+            height: 8.75rem;
             top: 8.5rem;
         }
 
@@ -198,77 +371,340 @@
             gap: 15rem;
         }
     }
+
+    .modal{
+        min-width: 22.1875rem;
+
+        &__info{
+            min-width: 18.5625rem;
+            max-height: 36.875rem;      
+            overflow: hidden; 
+        }
+    
+        &__text{
+            overflow-y: scroll;
+            padding: .6rem;
+        }
+    }
     
 
-    .modal__info{
-        min-width: 297px;
-        max-height: 590px;      
-        overflow: hidden; 
+    /*resenias.html ends*/
+
+    /*lista.html*/
+    .list-cont{
+        min-width: 21.875rem;
+
+        &__container{
+            width: 20rem;
+        }
+
+        &__input-text{
+            width: 13.75rem;
+        }
     }
 
-    .modal__text{
-        overflow-y: scroll;
-        padding: .6rem;
-    }
-
+    /*catalogo.html*/
     .catalogue-cont{
-
-        &__title{
-            min-width: 265px;
-        }
-
-        &__btns{
-            @include mixins.flex-box(row,wrap,center,center);
-            min-width: 228px;
-        }
-
-        &__car{
-            min-width: 300px;
-        }
+        min-width: 22.1875rem;
 
         &__car-text{
             overflow-y: scroll;
         }
     }
 
-    .cont-diferencia__contenido{
-        min-width: 300px;
-    }
+    /*nuestra-diferencia.html starts*/
+    .cont-diferencia{
+        min-width: 21.875rem;
 
-    .cont-diferencia__btns,
-    .cont-diferencia__ilustracion,
-    .cont-diferencia__informacion{
-        min-width: 260px;
+        &__contenido{
+            min-width: 18.75rem;
+        }
+    
+        &__btns,
+        &__ilustracion,
+        &__informacion{
+            min-width: 16.25rem;
+        }
     }
+    /*nuestra-diferencia.html ends*/
 
+    /*texto.html*/
     .text-cont{
-        min-width: 300px;
+        min-width: 20.625rem;
         margin: 0 1rem;
 
         &__title, 
         &__form,
         &__note,
         &__experience{
-            min-width: 300px;
+            min-width: 18.75rem;
         }
 
         &__alert{
-            min-width: 251px;
+            min-width: 15.6875rem;
         }
     }
-        
 
+    /*Conversor.html starts*/
+    .conversor-cont{
+        min-width: 22.1875rem;
+    }
+
+    .conversor-cont__title{
+        min-width: 15.3125rem;
+    }
+
+    .conversor-cont__btns{
+        min-width: 50%;
+    }
+
+    .conversor-cont__alert{
+        text-align: center;
+        width: 21.875rem;
+    }
+
+    .conversor-cont__info-result{
+        margin: 1rem auto;
+    }
+
+    .conversor-cont__info-currency{
+        width: 17.75rem;
+        margin: 0 auto;
+    }
+
+    .conversor-cont__print-date h3,
+    .conversor-cont__print-date h4 {
+        width: 8.875rem;
+    }
+
+    .conversor-cont__print-data h3,
+    .conversor-cont__print-data h4{
+        width: 8.875rem;
+    }
+    /*Conversor.html ends*/
+
+    /*library.html starts*/
+    .library-cont{
+        min-width: 21.875rem;
+    }
+    .library-cont__contTitle{
+        width: 17.5rem;
+        min-width: 17.5rem;
+    }
+    .library-cont__title{
+        font-size: 1.375rem;
+    }
+
+    .library-cont__input{
+        width: 12.5rem;
+    }
+
+    .library-cont__btns-cont{
+        width: 21.875rem;
+    }
+
+    .library-cont__btns{
+        width: 10.625rem;
+    }
+    /*library.html ends*/
+
+    /*video.html starts*/
+    .video-cont{
+        min-width: 21.875rem;
+
+        &__cont-video{
+            min-width: 21.875rem;
+        }
+
+        &__video{
+            min-width: 21.875rem;
+        }
+    }
+
+    .video-cont::after{
+        min-width: 21.875rem;
+    }
+    /*video.html ends*/
+
+    /*planes.html starts*/
+    .planes-cont{
+        min-width: 21.875rem;
+
+        & figure {
+            display: none;
+        }
+
+        &__title{
+            text-align: center;
+        }
+
+        &__empresariales{
+            height:62.5rem;
+            background-color: white;
+            
+            & div{
+                color: black;
+            }
+
+            &::after{
+                z-index: -1;
+            }
+        }
+
+        &__students-cont{
+            background-color: var(--color-second);
+
+            & div,
+            & h2{
+                color: white;
+            }
+        }
+
+        &__student-item{
+            width: 100%;
+        }
+
+        &__freelancer-cont{
+            height: 53.75rem;
+            background-color: white;
+
+            & div{
+                color: black;
+            }
+
+            &::after{
+                z-index: -1;
+            }
+        }
+
+        &__items-freelancer{
+            @include mixins.flex-box(column,nowrap,flex-start,center);
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+
+        &__item-freelancer{
+            width: 100%;
+        }
+
+        &__miPymes-cont{
+            background-color: var(--color-second);
+        }
+
+        &__miPymes-items{
+            background-color: white;
+        }
+
+        &__academic-cont{
+            height: 51.875rem;
+        }
+
+        &__academic-info{
+            background-color: white;
+
+            & div,
+            & h2{
+                color: black;
+            }
+
+            &::after{
+                z-index: -1;
+            }
+        }
+        
+        &__academic-items{
+           flex-direction: column;
+           flex-wrap: nowrap;
+        
+         }
+        
+        &__academic-item{
+            width: 100%;
+        }
+    }
+    /*planes.html ends*/
+
+    /*blog.html*/
+    .blog-cont{
+        min-width: 22.1875rem;
+    }
+
+    .blog-cont__worker,
+    .blog-cont__offers{
+        visibility: visible;
+    }
+
+    /*contacto.html starts*/
+
+    .contact-cont{
+        min-width: 350px;
+    }
+
+    .contact-cont__call h2{
+        min-width: 16.5625rem;
+    } 
+
+    .contact-cont__form {
+        min-width: 16.5625rem;
+
+        & legend,
+        & input,
+        & span,
+        & textarea{
+            min-width: 280px;
+        }
+    }
+
+    .contact-cont__error.activar{
+        width: 100%;
+    }
+
+    .contact-cont__form input:nth-child(10){
+        width: 30%;
+    }
+
+    .contact-cont__watermark{
+        min-width: 22rem;
+    }
+
+    .contact-cont__chat h2,
+    .contact-cont__chat p{
+        min-width: 17.5rem;
+    }
+
+    .contact-cont__btn{
+        min-width: 12.1875rem;
+    }
+
+    .contact-cont__contact h2,
+    .contact-cont__contact p{
+        width: 100%;
+    }
+
+    /*contacto.html ends*/
+
+    /*ingresar.html*/
+    .enter-cont{
+        min-width: 22.1875rem;
+    }
+    /*footer starts*/        
     .footer{
-        min-width: 300px;
+        min-width: 18.75rem;
     }
 
     .footer-resenias{
-        min-width: 340px;
+        min-width: 21.25rem;
     }
 
     .footer-position{
-        min-width: 356px;
+        min-width: 22.25rem;
     }
+
+    .footer-conversor{
+        min-width: 22.1875rem;
+    }
+    /*footer ends*/        
 
 
 }
+/*********** media 450px ends ************/

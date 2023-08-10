@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  <!--Header starts-->
   <header class="header">
     <a href="index.html" class="header__logo">
       <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
@@ -23,13 +24,13 @@
     <nav class="nav">
       <ul class="nav__options">
         <li class="nav__options-menu"> <a href="index.html">Inicio</a> </li>
-        <li  class="nav__options-menu"> <a href="#">Planes</a> 
+        <li  class="nav__options-menu"> <a href="planes.html">Planes</a> 
           <ul>
-            <li > <a href="#">Empresariales</a> </li>
-            <li > <a href="#">Estudiantiles</a> </li>
-            <li > <a href="#">Freelancer</a> </li>
-            <li > <a href="#">Mipymes</a> </li>
-            <li  class="nav__options-menu"> <a href="#">Universitarios</a>
+            <li > <a href="planes.html">Empresariales</a> </li>
+            <li > <a href="planes.html">Estudiantiles</a> </li>
+            <li > <a href="planes.html">Freelancer</a> </li>
+            <li > <a href="planes.html">Mipymes</a> </li>
+            <li  class="nav__options-menu"> <a href="planes.html">Universitarios</a>
             <ul>
               <li ><a href="#">Instituciones</a> </li>
               <li ><a href="#">Docentes</a> </li>
@@ -53,57 +54,59 @@
             <li><a href="nuestra-diferencia.html">Elígenos</a> </li>
           </ul>
         </li>
-        <li class="nav__options-menu"> <a href="#">Blog</a> 
+        <li class="nav__options-menu"> <a href="blog.html">Blog</a> 
           <ul>
-            <li><a href="#">Tu historia</a> </li>
-            <li><a href="#">Colaboradores</a> </li>
-            <li><a href="#">Clientes</a> </li>
+            <li><a href="blog.html">Tu historia</a> </li>
+            <li><a href="blog.html">Colaboradores</a> </li>
+            <li><a href="blog.html">Clientes</a> </li>
           </ul>
         </li>
-        <li class="nav__options-menu"> <a href="#">Contacto</a>
+        <li class="nav__options-menu"> <a href="contacto.html">Contacto</a>
           <ul>
-            <li ><a href="#">Agendar llamada</a> </li>
-            <li ><a href="#">Chat</a> </li>
-            <li ><a href="#">Sedes</a> </li>
-            <li ><a href="#">Horario de atención</a> </li>
+            <li ><a href="contacto.html">Agendar llamada</a> </li>
+            <li ><a href="contacto.html">Chat</a> </li>
+            <li ><a href="contacto.html">Sedes</a> </li>
+            <li ><a href="contacto.html">Horario de atención</a> </li>
           </ul>
         </li>
-        <li class="nav__options-menu"> <a href="#">Ventas</a> </li>
-        <li class="nav__options-menu"> <a href="#">Ingresar</a> </li>
+        <li class="nav__options-menu"> <a href="ingresar.html">Ingresar</a> </li>
       </ul>
 
     </nav>
 
   </header>
+  <!--Header ends-->
   
+  <!--Menu-hamburger button-->     
   <button class="btnMenu">
     <img class="btnMenu__logo" src="./img/menu.svg">
   </button>
 
+  <!--Panel starts-->
   <aside class="panel">
     <nav class="panel__menu">
       <a href="index.html" class="panel__menu-options">Inicio</a>
-      <a href="#" class="panel__menu-options">Planes</a>
+      <a href="planes.html" class="panel__menu-options">Planes</a>
       <a href="compania.html" class="panel__menu-options">Compañía</a>
       <a href="nuestra-diferencia.html" class="panel__menu-options">Nuestra diferencia</a>
-      <a href="#" class="panel__menu-options">Blog</a>
-      <a href="#" class="panel__menu-options">Contacto</a>
-      <a href="#" class="panel__menu-options">Ventas</a>
+      <a href="blog.html" class="panel__menu-options">Blog</a>
+      <a href="contacto.html" class="panel__menu-options">Contacto</a>
+      <a href="ingresar.html" class="panel__menu-options">Ingresar</a>
     </nav>
   </aside>
+  <!--Panel ends-->
 
+  <!--Main starts-->
   <main>
-
-
    <section class="container">
 
-<section class="container__presentation">
+  <section class="container__presentation">
   <h1 class="container__presentation-title">¿ Qué nos hace los mejores diseñando y realizando proyectos?</h1>
   <p class="container__presentation-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis esse, impedit blanditiis
     deleniti rem ipsum facilis tempora placeat totam autem debitis perspiciatis pariatur neque quae itaque mollitia,
     consequuntur sapiente! Recusandae?</p>
   <button class="container__presentation-btn">Leer mas</button>
-</section>
+  </section>
 
 <div class="container__carousel">
 
@@ -150,11 +153,11 @@
     <div class="container__contact-btns">
       <div class="container__contact-btn1">
         <img src="./img/agendar-llamada.svg" alt="telefono" class="container__contact-schedule">
-        <button class="container__contact-call">Agendar llamada</button>
+        <button class="container__contact-call"><a href="contacto.html">Agendar llamada</a></button>
       </div>
       <div class="container__contact-btn2">
         <img src="./img/especialista.svg" alt="agente de servicio" class="container__contact-specialist">
-        <button class="container__contact-write">Contactar a un especialista</button>
+        <button class="container__contact-write"><a href="contacto.html">Contactar a un especialista</a></button>
       </div>
     </div>
     
@@ -162,7 +165,10 @@
 
    </section>
 
-   <footer class="footer">
+  </main>
+  <!--Main ends-->
+  <!--Footer starts-->
+  <footer class="footer">
     <div class="footer__social">
 <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
 <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
@@ -174,10 +180,9 @@
 <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
     </div>
    </footer>
-
-  </main>
-
-
+  <!--Footer ends-->
+  
+   <!--js script-->
   <script src="logica.js" type="module"></script>
 </body>
 

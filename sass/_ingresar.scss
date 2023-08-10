@@ -1,0 +1,38 @@
+@use "mixins";
+
+.enter-cont{
+    @include mixins.flex-box(column,nowrap,flex-start,center);
+    min-height: calc(100vh - 8.3256rem);
+
+    &__img{
+        margin-top: 4rem;
+        padding: 1rem;
+        font-size: 96px;
+        border-radius: 50%;
+        background-color:var(--color-second);
+        color: white;
+    }
+
+    &__form{
+        @include mixins.flex-box(column,nowrap,center,center);
+        margin-top: 1rem;
+        gap: 1rem;
+
+        & input{
+            border-radius: 8px;
+            padding: .3rem;
+        }
+    }
+
+    & p{
+        margin-top: .5rem;
+        color: var(--color-second);
+        cursor: pointer;
+    }
+    
+    & span{
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+}

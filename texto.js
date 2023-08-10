@@ -5,6 +5,7 @@ const d = document,
     request = d.querySelector("#text-cont__statement"),
     container = d.querySelector(".text-cont");
 
+//information experiences
 const text = [
     "Co-creación:Involucrar al cliente en el diseño o elaboración del producto o servicio es una de las estrategias más efectivas para vincularle emocionalmente porque combina personalización y participación. En Forum Business Travel lo desarrollan en sus eventos de formación: “apostamos por el open spaces. Evitamos los eventos unidireccionales y procuramos que, además del gurú, los participantes aporten soluciones al problema. Los eventos pueden ser todo lo personales que desees permitiendo que el participante decida en todo momento en qué quiere profundizar”. Otras técnicas que utilizan son la del ponente interactivo: tiene diez minutos para hablar y los asistentes votan, si el resultado es positivo le dan cinco minutos más. Otra fórmula es ofrecer a los asistentes al principio del evento la posibilidad de elegir sobre qué hablar al final del mismo. “Se trata de provocar y retar a los participantes”, concluye",
     "Gamificación: “Consiste en transformar un proceso clásico en una experiencia lúdica. Busca transformar tu proceso de metodología en un juego”, explica Philippe Delespesse, cofundador del juego Binnakle, un juego empresarial que nació como un spin off de la empresa Inteligencia Creativa y que hoy está en 13 países. “En el juego del Binnakle por ejemplo hay cuatro equipos alrededor de un tablero grande con cuatro zonas (repensar un problema, generar ideas, pulir esas ideas y venderlas) repartidas sobre una isla. Los equipos compiten por los bikles y ganan o pierden en función de las dinámicas que van desarrollando. Al empezar ni miran las monedas y a los 15 minutos matarían por ellas. La ventaja que tiene radica en dejarte ir, dejarte llevar, no tener complejos, ir más lejos. Realmente es una experiencia. Cuando practicas algo se te queda mejor La experiencia hace que las enseñanzas calen más y mejor”",
@@ -25,77 +26,93 @@ const text = [
     "La venta cruzada: Conocer los puntos de fricción de tu relación con el cliente te abre las posibilidades de ampliar la gama de productos o servicios a ofrecer en cada una de las fases, mejorando su experiencia e incrementando tus posibilidades comerciales. La empresa de masajes Fariolen, por ejemplo, consigue crear un ambiente especial: música relajante, aromas especiales, iluminación adecuada. Ofrecen agua fría al entrar y cava al salir; expertos en masajes y te dan opciones de contratar bonos que combinan diferentes servicios. Todo ello promoviendo el boca a boca, la retención y la recomendación. Otras forma de trabajar la venta cruzada es a través del cobranding: alíate con otra compañía para ofrecer una experiencia global. Famoso es el ejemplo de Zappos y Google. Para promocionar una app, Google sacó un camión de cupcakes a la calle que vendía a cambio de fotos con la app. La marca de zapatos entonces decidió regalar unos zapatos a cambio de un cupcake del camión de Google. Fue una estrategia que mejoró la experiencia del cliente de ambas",
     "Y no olvides el compromiso: Para conseguir clientes comprometidos y leales nada mejor que mostrarse como una marca/empresa comprometida a su vez con causas sociales y justas. Son muchas las opciones: desde realizar donaciones a ONG por cada producto o servicio que te contraten, hasta participar activamente en la organización o patrocinio de acciones sociales o medioambientales, asociarte con proveedores o partners socialmente responsables o incluso tener una división especializada en el tercer sector. Si, además les das a tus clientes la posibilidad de elegir a qué causa dedicar tus fondos o tus esfuerzos, el enganche es mayor."
 ]
-
-export function texto(){
-
-    let count = 0;
-
-    d.addEventListener("keyup",(e)=>{
-
-        if(e.target.matches(".text-cont__form [required]")){
-            let input = e.target,
-            pattern = e.target.pattern || e.target.dataset.pattern;
-            if(pattern){
-                let regExp = new RegExp(pattern);
-                if(!regExp.exec(input.value)){
-                 alert.style.display = "block";
-                 btn.disabled = true;   
-                } else{
-                    alert.style.display = "none";
-                    btn.disabled = false;
+//function exported to logica.js
+export function texto(){    
+    //load function when document is loaded
+    d.addEventListener("DOMContentLoaded",()=>{
+        //identify if experiences had already been inserted
+        let count = 0;
+        //when a key is typed...
+        d.addEventListener("keyup",(e)=>{
+            //if the key is typed in "required field"
+            if(e.target.matches(".text-cont__form [required]")){
+                //save the typed key
+                let input = e.target,
+                //save the pattern of the space in which it was typed
+                pattern = e.target.pattern || e.target.dataset.pattern;
+                //if there is pattern
+                if(pattern){
+                    //check if the typing complies with the pattern
+                    let regExp = new RegExp(pattern);
+                    //if it does not comply, show the alert
+                    if(!regExp.exec(input.value)){
+                     alert.style.display = "block";
+                     btn.disabled = true;   
+                    }//if there´s not pattern, hide any alert
+                     else{
+                        alert.style.display = "none";
+                        btn.disabled = false;
+                    }
                 }
-            }
-
-        }
-    })
-
-    form.addEventListener("submit",(e)=>{
-        e.preventDefault();
-
     
-
-        let article = d.createElement("article");
-            article.classList.add("text-cont__experiences");
-            alert.insertAdjacentElement("afterend",article);
-            let experiences = d.querySelector(".text-cont__experiences");
-
-
-
-        if(request.value > 0 && request.value <= 18){
-            
-
-
-            if(count > 0){
-                container.removeChild(container.lastElementChild);
             }
-
-            let newText = text.slice(0,request.value);
-
-            let insertText = newText.map(function(element){
-                return `<p class = "text-cont__experience">${element}</p>`;
-            });
-            experiences.innerHTML = insertText.join();
-            count ++;
-            
-        } else{
-
-            if(count > 0){
-                container.removeChild(container.lastElementChild);
-            }
-
-            let paragraph = d.createElement("p");
-            paragraph.classList.add("text-cont__experience");
-            experiences.insertAdjacentElement("beforeend",paragraph);
-            let paragraphCont = d.querySelector(".text-cont__experience");
-            
-            const random = Math.floor(Math.random() * text.length);
-            console.log( typeof text[random]);
-            paragraphCont.textContent = text[random];
-            console.log( paragraphCont);   
-            count++;       
-            
+        })
+    
+        //load the code only when the tab is in the page
+        if(form){
+            //if given send to request
+            form.addEventListener("submit",(e)=>{
+                //do not send data by default
+                e.preventDefault();        
+                //create the space to insert the requested information
+                let article = d.createElement("article");
+                    article.classList.add("text-cont__experiences");
+                    alert.insertAdjacentElement("afterend",article);
+                    let experiences = d.querySelector(".text-cont__experiences");
+        
+        
+                //if the number of experiences is greater than 0 and less than or equal to 18
+                if(request.value > 0 && request.value <= 18){
+                    
+        
+                    //if there are already experiences inserted
+                    if(count > 0){
+                        //remove experiences
+                        container.removeChild(container.lastElementChild);
+                    }
+                    //identify the information to insert
+                    let newText = text.slice(0,request.value);
+                    //store the information to insert
+                    let insertText = newText.map(function(element){
+                        return `<p class = "text-cont__experience">${element}</p>`;
+                    });
+                    //insert the information
+                    experiences.innerHTML = insertText.join();
+                    //notify that experiences were inserted
+                    count ++;
+                    
+                } else{
+                    //if there are already experiences inserted
+                    if(count > 0){
+                        //remove experiences
+                        container.removeChild(container.lastElementChild);
+                    }
+                    //create the space where the experiences will be inserted
+                    let paragraph = d.createElement("p");
+                    paragraph.classList.add("text-cont__experience");
+                    experiences.insertAdjacentElement("beforeend",paragraph);
+                    let paragraphCont = d.querySelector(".text-cont__experience");
+                    
+                    //generate a random number that is within the number of experiences available
+                    const random = Math.floor(Math.random() * text.length);
+                    //insert experience
+                    paragraphCont.textContent = text[random];
+                    //notify that the experience was inserted
+                    count++;       
+                    
+                }
+            })
         }
     })
-
 
 }

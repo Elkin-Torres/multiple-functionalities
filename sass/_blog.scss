@@ -1,0 +1,165 @@
+@use "mixins";
+
+.blog-cont{
+    @include mixins.flex-box(column,nowrap, flex-start, center);
+    min-height: calc(100vh - 133.21px);
+    width: 100%;
+    margin: 0 auto;
+
+    &__history{
+        @include mixins.flex-box(column,nowrap,flex-start,center);
+
+        & h2{
+            margin:3rem 0 2rem;
+            width: 80%;
+            text-align: center;
+        }
+
+        & p{
+            width: 80%;
+            text-align: center;
+        }
+    }
+    
+    &__error{
+        font-size: 80%;
+        background-color: red;
+        color: #fff;
+        transition: all 800ms ease;
+    }
+
+    &__error.activar{
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        animation: show-message 1s 1 normal 0s ease-out both;
+    } 
+    
+    &__none{
+        display: none;
+    }
+
+    &__spin{
+        width: 2rem;
+        margin: 0 auto;
+    }
+
+    &__form-information{
+        width: 100%;
+    }
+
+    &__form{
+        width: 80%;
+        margin: 2rem auto 1rem;
+    }
+
+    &__form input,
+    &__form textarea,
+    &__form legend{
+        margin: .5rem auto 0;
+        width: 60%;
+    }
+
+    &__form textarea{
+        margin-bottom: 1rem;
+    }
+
+    &__form input:nth-child(10){
+        width: 20%;
+        margin-bottom: 2rem;
+    }
+
+    &__response p{
+        margin: 0 auto;
+    }
+
+    &__workers{
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+        position: relative;
+        background-color:#f16621c8;
+
+        & h2,
+        & h3{
+            width: 80%;
+            margin: 1rem auto;
+            text-align: center;
+            color: white;
+        }
+    }
+
+
+
+    &__cont-img{
+        width: 150px;
+        height: 150px;
+    }
+
+    &__name{
+        text-align: center;
+        color: white;
+    }
+
+    &__worker{
+        @include mixins.flex-box(row,wrap,center,flex-start);
+        width: 80%;
+        margin: 2rem auto;
+        gap: 2rem;
+        visibility: hidden;
+
+    }
+
+    &__worker-visible{
+        visibility: visible;
+    }
+    
+    &__img-worker{
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+    }
+
+    &__clients{
+        width: 100%;
+        height: auto;
+
+        & h2{
+            width: 80%;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        & p{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    &__offers{
+        @include mixins.flex-box(row,wrap,flex-start,center);
+        width: 80%;
+        margin: 2rem auto;
+        visibility: hidden;
+        & div{
+            width: 50%;
+        }
+
+        & h3{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        & div:nth-child(3){
+            margin: 2rem auto 0;
+        }
+    }
+
+    &__offers-visible{
+        visibility: visible;
+    }
+
+
+    }
+

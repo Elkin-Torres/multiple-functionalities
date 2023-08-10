@@ -1,0 +1,99 @@
+@use "mixins";
+
+.conversor-cont{
+    @include mixins.flex-box(column,nowrap,flex-start,center);
+    min-height: calc(100vh - 8.3256rem);
+    
+    &__title{
+        margin-top: 80px;
+    }
+
+    &__content{
+        @include mixins.flex-box(row,nowrap,space-evenly,center);
+        width: 80%; 
+        margin-top: 1rem;
+    }
+
+    &__input{
+        margin-bottom: 1rem;
+        border-radius: .25rem;
+        border: .125rem solid var(--color-second);
+    }
+
+    &__select{
+        margin-bottom: 1rem;
+        width: 10rem;
+        border: .125rem solid var(--color-second);
+        border-radius: .25rem;
+    }
+
+    &__alert{
+        visibility: hidden;
+        border-radius: 4px;
+        padding: 0.1rem;
+        background-color: rgb(255,0,0,0.4);
+
+    }
+
+    &__btns{
+        @include mixins.flex-box(row, nowrap, space-evenly,center);
+        width: 20%;
+    }
+
+    &__btn{
+        width: 4.9375rem;
+        margin-top: .5rem;
+        padding: .2rem;
+        border-radius: 4px;
+        background-color: var(--color-second);
+        color: white;
+    }
+
+    &__historical-cont{
+        @include mixins.flex-box(column, nowrap,center,center);
+        width: 100%;
+        margin-top: 1rem;
+        visibility: hidden;
+    }
+
+    &__historical{
+        margin-top: 1rem;
+    }
+
+    &__dateInfo{
+        @include mixins.flex-box(row,nowrap,space-evenly,center);
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    &__indivDate{
+        @include mixins.flex-box(column,nowrap,center,flex-start);
+    }
+
+    &__info-result{
+        display: none;
+        text-align: center;
+        width: 80%;
+        margin: 1rem 0;
+    }
+
+    &__info-currency{
+        @include mixins.flex-box(row,nowrap,center,center);
+    }
+
+    &__info-currency h3,h4{
+        width: 12.5rem;
+        height: 1.875rem;
+        text-align: center;
+        border: thin solid black;
+    }
+
+    &__info-currency h3{
+        background-color: var(--color-second);
+        color: white;
+    }
+
+    &__info-currency:nth-child(3){
+        text-align: center;
+    }
+}

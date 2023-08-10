@@ -1,0 +1,100 @@
+@use "mixins";
+
+.library-cont{
+    @include mixins.flex-box(column,nowrap,flex-start,center);
+    min-height: calc(100vh - 133.21px);
+    width: 80%;
+    margin: 0 auto;
+
+    &__contTitle{
+        @include mixins.flex-box(row,wrap,space-between,center);
+        margin-top:1rem;
+        width:20rem;
+    }
+
+    &__contTitle span{
+        color:var(--color-second);
+        font-size:30px;
+    }
+
+    &__information-cont{
+       @include mixins.flex-box(row, nowrap,center,center);
+       width: 100%; 
+       position: relative;
+    }
+
+    &__information{
+        position:relative;
+    }
+
+    &__input{
+        margin-top: 0.5rem;
+        width: 15.625rem;
+        border: thin solid var(--color-second);
+        border-radius: 4px;
+    }
+
+    &__information span{
+        position:absolute;
+        top:35%;
+        right:2%;
+        font-size:var(--font-span); 
+    }
+
+    &__numPg{
+        position: absolute;
+        right: 4px;
+        visibility: hidden;
+    }
+
+    &__notFound{
+        margin-top: 10rem;
+    }
+
+    &__imgs{
+        @include mixins.flex-box(row,wrap,space-evenly,flex-start);
+        width:90%; 
+    }
+
+    &__img{
+        width:300px;
+        height:250px;
+        margin-top:1rem;
+        border-radius:4px;
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+    }
+
+    &__btns-cont{
+        @include mixins.flex-box(row,nowrap, center,center);
+        width: 100%;
+        position: relative;
+        visibility: hidden;
+    }
+
+    &__btns{
+        @include mixins.flex-box(row,nowrap, center, center);
+        height: 37px;
+        margin: 1rem 0;
+        gap: 1rem;
+    }
+
+    &__btns button{
+        border: none;
+        color: var(--color-second);
+        cursor: pointer;
+    }   
+    
+
+    &__optionNum{
+        cursor: pointer;
+    }
+
+    &__optionNum:hover{
+        border: 1px solid var(--color-second);
+    }
+
+
+
+}

@@ -1,4 +1,5 @@
 const d = document,
+  contCalculadora = d.querySelector(".cont__calculadora"),
   almacenar = d.querySelector(".cont__calculadora-almacenar"),
   ingresar = d.querySelector(".cont__calculadora-numero"),
   cambioSigno = d.querySelector(".cont__calculadora-menos"),
@@ -26,27 +27,27 @@ const d = document,
   btnIgual = d.querySelector(".cont__calculadora-igual"),
   btnDisabled = d.querySelectorAll(".cont__calculadora-estilo");
 
-//Para el control del numero que se este ingresando
+//To control the number that is being entered
 const contadora1 = [];
-//Para guardar el primer numero que se ingrese
+//To save the first number entered
 const contadora2 = [];
-//Para controlar que solo se ingrese un punto decimal
+//To control that only one decimal point is entered
 let punto = 0;
-//Para controlar el cambio de signo del numero que se esta ingresando
+//To control the sign change of the number being entered
 let masMenos = 0;
-//Para controlar el numero "0" cuando se quiere ingresar como primer y unico digito
+//To control the number "0" when you want to enter as the first and only digit
 let cero = 0;
-//Para controlar la division por "0"
+//To control division by "0"
 let dividirCero = 0;
-//Para controlar la raíz negativa
+//To control the negative root
 let raizNegativa = 0;
-/* Para el control de las operaciones */
+/* For the control of operations */
 const contenedorOperacion = [];
 
 let botonIgual = 0;
 
 
-//Para ingresar el signo de la operacion seleccionada
+//To enter the sign of the selected operation
 function operacionInicial(signo){
   let span = d.createElement("span");
   span.classList.add("signoAlmacenar");
@@ -54,10 +55,8 @@ function operacionInicial(signo){
   almacenar.insertAdjacentElement("beforeend", span);
 }
 
-//Para cambiar el signo de la operacion seleccionada (lo que se hizo en "operacionInicial")
+//To change the sign of the selected operation (what was done in "operacionInicial")
 function cambiarOperacion(signo){
-/*   const signoAlmacenar = d.querySelector(".signoAlmacenar");
-  signoAlmacenar.parentNode.removeChild(signoAlmacenar); */
   const tieneHijo = almacenar.querySelector(":first-child") !== null;
 
   if(tieneHijo){
@@ -75,7 +74,7 @@ function cambiarOperacion(signo){
 
 }
 
-//Para ejecutar las operaciones de dividir con dividendo "1" (cuando se selecciona "1/x"), si no hay numero en "contadora 2"
+//To execute divide operations with dividend "1" (when "1/x" is selected), if there is no number in "contadora 2"
 function divisor(){
 
   let numero = Number(contadora1.join(""));
@@ -96,7 +95,7 @@ function divisor(){
   }
 }
 
-//Para ejecutar las operaciones de dividir con dividendo "1" (cuando se selecciona "1/x"), si hay numero en "contadora2" y ademas se ha seleccionado una operación para realizar con el numero ingresado en "contadora1"
+//To execute the operations of dividing with dividend "1" (when "1/x" is selected), if there is a number in "contadora 2" and an operation has also been selected to perform with the number entered in "contadora1
 function divisorParaOperar(){
   let numero = Number(contadora1.join(""));
   let resultado = 1 / numero;
@@ -105,7 +104,7 @@ function divisorParaOperar(){
   contadora1.push(resultadoFinal);
 }
 
-//Para ejecutar las operaciones de elevar al cuadrado si no hay numero en "contadora2"
+//To execute the squaring operations if there is no number in "counter2"
   function elevarCuadrado(){
     let resultado = Math.pow(Number(contadora1.join("")), 2);
      let resultadoFinal = Math.round(resultado * 100)/100;
@@ -115,7 +114,7 @@ function divisorParaOperar(){
     contadora1.length = 0;
   }
   
-//Para ejecutar las operaciones de elevar al cuadrado si hay numero en "contadora2" y ademas se ha seleccionado una operacion para realizar con el resultado de elevar al cuadrado el valor que se ingreso en "contador1"
+//To execute the squaring operations if there is a number in "contadora2" and an operation has also been selected to perform with the result of squaring the value entered in "contador1"
   function elevarCuadradoParaOperar(){
     let numero = Number(contadora1.join(""));
 
@@ -126,7 +125,7 @@ function divisorParaOperar(){
   }
 
 
-//Para ejecutar las operaciones de raiz cuadrada si no hay numero en "contadora2"
+//To execute the square root operations if there is no number in "counter2"
 function raizCuadrada(){
   let numero = Number(contadora1.join(""));
 
@@ -146,7 +145,7 @@ function raizCuadrada(){
   }
 }
 
-//Para ejecutar las operaciones de raiz cuadrada si hay numero en "contadora2" y ademas se ha seleccionado una operacion para realizar con el resultado de la raiz cuadrada que se ingreso en "contador1"
+//To execute the square root operations if there is a number in "contadora2" and also an operation has been selected to perform with the result of the square root that was entered in "contador1"
 function raizCuadradaParaOperar(){
   let numero = Number(contadora1.join(""));
 
@@ -157,7 +156,7 @@ function raizCuadradaParaOperar(){
 }
 
 
-//Para ejecutar cualquier operacion de: suma, resta, multiplicacion o division
+//To execute any operation of: addition, subtraction, multiplication or division
 function operacion (){
   let numero1 = Number(contadora2.join(""));
   let numero2 = Number(contadora1.join(""));
@@ -171,7 +170,6 @@ function operacion (){
     contadora2.length = 0;
     contadora2.push(resultadoFinal);
     contadora1.length = 0;
-    //operacionInicial("+");
   } else if(operacionAEjecutar === "restar"){
     let resultadoInicial = numero1 - numero2;
     let resultadoFinal = (resultadoInicial >= 0 || -1)* Math.round(Math.abs(resultadoInicial)*100)/100;
@@ -180,7 +178,6 @@ function operacion (){
     contadora2.length = 0;
     contadora2.push(resultadoFinal);
     contadora1.length = 0;
-    //operacionInicial("-");
   } else if(operacionAEjecutar === "multiplicar"){
 
     if(cero === 1){
@@ -202,9 +199,6 @@ function operacion (){
     contadora2.length = 0;
     contadora2.push(resultadoFinal);
     contadora1.length = 0;
-    //operacionInicial("*");
-    
-    //cero = 0;
   }
   } else if(operacionAEjecutar === "dividir"){
 
@@ -230,563 +224,565 @@ function operacion (){
 
 }
 
-export function calculadora(registro) {
+//Function exported to logica.js
+export function calculando() {
 
-
-    //Para el ingreso de los numeros del 1 al 9
-    if ( contadora1.length <= 26 &&
-     ( registro === "1" ||
-      registro === "2" ||
-      registro === "3" ||
-      registro === "4" ||
-      registro === "5" ||
-      registro === "6" ||
-      registro === "7" ||
-      registro === "8" ||
-      registro === "9" )
-    ) {
-      //Si no se ha ingresado ningun numero aun
-      if(contadora1.length === 0){
-        ingresar.textContent = registro;
-        contadora1.push(registro);
-      }//si ya se ha empezado a ingresar numeros
-      else{
-        ingresar.textContent += registro;
-        contadora1.push(registro);
-      }
-    }
-
-    //Para el ingreso del numero "0"
-    if(contadora1.length <= 23){
-      if(registro === "0" && contadora1.length !== 0){
-        ingresar.textContent += registro;
-        contadora1.push(registro);
-      } else if(registro === "0" && contadora1.length === 0){
-        cero = 1;
-        ingresar.textContent = 0;
-      }
-    }
- 
-
- //Para ingresar el punto decimal al numero
- if(registro === "."){
-  if(punto === 0 && contadora1.length === 0){
-    ingresar.textContent = 0;
-    ingresar.textContent += registro;
-    contadora1.push(0, registro);
-    cero = 0;
-    punto = 1;
-  } else if(punto === 0 && contadora1.length !== 0){
-    ingresar.textContent += registro;
-    contadora1.push(registro);
-    punto = 1;
-  }
-}
-  //Para cambiar a negativo el numero que se esta ingresando
-  if(registro === "m"){
-    if(masMenos === 0 && contadora1.length !== 0){
-      contadora1.unshift("-");
-      cambioSigno.classList.remove("hidden");
-      masMenos = 1;
-    }else if(masMenos === 1){
-      contadora1.shift();
-      cambioSigno.classList.add("hidden");
-      masMenos = 0;
-    }
-  }   
-
-    //Para mostrar al final de "almacenar" que operacion se esta escogiendo para ejecutar
-      //Cuando se selecciona "sumar"
-      if(registro === "+"){
-        //contenedorOperacion.length = 0;
-        if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
-          contadora2.push(0);
-          almacenar.textContent = 0; 
-          contenedorOperacion.push("sumar");    
-          operacionInicial("+");
-        } else if(contadora2.length === 0){
-          if( cero === 1){
-          contadora2.push(Number(contadora1.join("")));
-          almacenar.textContent = 0; 
-          contadora1.length = 0;
-          ingresar.textContent = "-";
-          masMenos = 0;
-          punto = 0;
-          contenedorOperacion.push("sumar");    
-          operacionInicial("+");
-          cambioSigno.classList.add("hidden");
-          cero === 0;
-          }else{
-          contadora2.push(Number(contadora1.join("")));
-          almacenar.textContent = contadora1.join(""); 
-          contadora1.length = 0;
-          ingresar.textContent = "-";
-          masMenos = 0;
-          punto = 0;
-          contenedorOperacion.push("sumar");
+  if(contCalculadora){
+    d.addEventListener("DOMContentLoaded",()=>{
       
-          operacionInicial("+");
-          cambioSigno.classList.add("hidden");
-        }
-        }else if(contadora2.length !== 0 && contenedorOperacion.length === 0  && (contadora1.length !== 0 || cero === 1)){
-          contadora2.length = 0;
-          contadora2.push(Number(contadora1.join("")));
-          almacenar.textContent = Number(contadora1.join(""));
-          contadora1.length = 0;
-          ingresar.textContent = "-";
-          operacionInicial("+");
-          contenedorOperacion.push("sumar");
-          cero = 0;
-          masMenos = 0;
-          punto = 0;
-          cambioSigno.classList.add("hidden");
-//
-        }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
-          operacion();
-          contenedorOperacion.length = 0;//
-          contenedorOperacion.push("sumar");
-          //operacion();
-          masMenos = 0;
-          punto = 0;
-          cambioSigno.classList.add("hidden");
-          operacionInicial("+");//
-        }else if(contadora2.length !== 0 && contadora1.length === 0){
-          contenedorOperacion.length = 0;//
-          contenedorOperacion.push("sumar");
-          cambiarOperacion("+");
-        }
-  
-      }
-
-      //Cuando se selecciona "restar"
-      if(registro === "-"){
-        //contenedorOperacion.length = 0;
-        if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
-          contadora2.push(0);
-          almacenar.textContent = 0; 
-          contenedorOperacion.push("restar");    
-          operacionInicial("-");
-        } else if(contadora2.length === 0){
-          if( cero === 1){
-            contadora2.push(Number(contadora1.join("")));
-            almacenar.textContent = 0; 
-            contadora1.length = 0;
-            ingresar.textContent = "-";
-            masMenos = 0;
-            punto = 0;
-            contenedorOperacion.push("restar");    
-            operacionInicial("-");
-            cambioSigno.classList.add("hidden");
-            cero === 0;
-            } else {
-          contadora2.push(Number(contadora1.join("")));
-          almacenar.textContent = contadora1.join(""); 
-          contadora1.length = 0;
-          ingresar.textContent = "-";
-          masMenos = 0;
-          punto = 0;
-          contenedorOperacion.push("restar");    
-          operacionInicial("-");
-          cambioSigno.classList.add("hidden");
-        }
-        }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
-          operacion();//
-          contenedorOperacion.length = 0;//
-          contenedorOperacion.push("restar");
-          //operacion();
-          masMenos = 0;
-          punto = 0;
-          cambioSigno.classList.add("hidden");
-          operacionInicial("-");//
-  
-        }else if(contadora2.length !== 0 && contadora1.length === 0){
-          contenedorOperacion.length = 0;//
-          contenedorOperacion.push("restar");
-          cambiarOperacion("-");
-        }
-        
-      }
-       //Cuando se selecciona "multiplicar"
-       if(registro === "*"){
-        //contenedorOperacion.length = 0;
-        if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
-          contadora2.push(0);
-          almacenar.textContent = 0; 
-          contenedorOperacion.push("multiplicar");    
-          operacionInicial("*");
-        } else if(contadora2.length === 0){
-          if( cero === 1){
-            contadora2.push(Number(contadora1.join("")));
-            almacenar.textContent = 0; 
-            contadora1.length = 0;
-            ingresar.textContent = "-";
-            masMenos = 0;
-            punto = 0;
-            contenedorOperacion.push("multiplicar");    
-            operacionInicial("*");
-            cambioSigno.classList.add("hidden");
-            cero === 0;
-          }else{
-          contadora2.push(Number(contadora1.join("")));
-          almacenar.textContent = contadora1.join(""); 
-          contadora1.length = 0;
-          ingresar.textContent = "-";
-          masMenos = 0;
-          punto = 0;
-          contenedorOperacion.push("multiplicar");    
-          operacionInicial("*");
-          cambioSigno.classList.add("hidden");
-     /*    }else if(contadora2.length!==0 && contadora1.length === 0 && cero === 1){
-          //contenedorOperacion.push("multiplicar");
-          contadora1.push(0);
-          operacion(); */
-        }
-  
-        }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
-          //contenedorOperacion.push("multiplicar");
-          operacion();
-          contenedorOperacion.length = 0;//
-          contenedorOperacion.push("multiplicar");
-          masMenos = 0;
-          punto = 0;
-          cambioSigno.classList.add("hidden");
-          operacionInicial("*");//
-  
-        }else if(contadora2.length !== 0 && contadora1.length === 0){
-          contenedorOperacion.length = 0;
-          contenedorOperacion.push("multiplicar");
-          cambiarOperacion("*");
-        }
-        
-      }
-      //Cuando se selecciona "dividir"
-      if(registro === "/"){
-        //contenedorOperacion.length = 0;
-        if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
-          contadora2.push(0);
-          almacenar.textContent = 0; 
-          contenedorOperacion.push("dividir");    
-          operacionInicial("/");
-        } else if(contadora2.length === 0){
-          if( cero === 1){
-            contadora2.push(Number(contadora1.join("")));
-            almacenar.textContent = 0; 
-            contadora1.length = 0;
-            ingresar.textContent = "-";
-            masMenos = 0;
-            punto = 0;
-            contenedorOperacion.push("dividir");    
-            operacionInicial("/");
-            cambioSigno.classList.add("hidden");
-            cero === 0;
-          }else{
-          contadora2.push(Number(contadora1.join("")));
-          almacenar.textContent = contadora1.join(""); 
-          contadora1.length = 0;
-          ingresar.textContent = "-";
-          masMenos = 0;
-          punto = 0;
-          contenedorOperacion.push("dividir");    
-          operacionInicial("/");
-          cambioSigno.classList.add("hidden");
-     /*    }else if(contadora2.length!==0 && contadora1.length === 0 && cero === 1){
-          //contenedorOperacion.push("multiplicar");
-          contadora1.push(0);
-          operacion(); */
-        }
-  
-        }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
-          //contenedorOperacion.push("multiplicar");
-          operacion();
-          contenedorOperacion.length = 0;//
-          contenedorOperacion.push("dividir");
-          masMenos = 0;
-          punto = 0;
-          cambioSigno.classList.add("hidden");
-          operacionInicial("/");//
-  
-        }else if(contadora2.length !== 0 && contadora1.length === 0){
-          contenedorOperacion.length = 0;
-          contenedorOperacion.push("dividir");
-          cambiarOperacion("/");
-        }
-        
-      }
-
-      //Cuando se selecciona "raiz cuadrada"
-      if(registro === "r"){
-        //contenedorOperacion.length = 0;
-  
-        if(contadora1.length === 0 && cero === 1 && contenedorOperacion.length === 0){
-            raizCuadrada();
-            cero = 0;           
-        } else if(contadora1.length !== 0 && contenedorOperacion.length === 0){
-          raizCuadrada();      
-          masMenos = 0;
-          punto = 0;
-          cambioSigno.classList.add("hidden");
-        } else if(contadora1.length === 0 && cero === 1 && contenedorOperacion.length !== 0){
-          raizCuadradaParaOperar();
-          operacion();
-          masMenos = 0;
-          cero = 0;
-        } else if(contadora1.length !== 0 && contenedorOperacion.length !== 0 ){
-         
-          if(masMenos === 1){
-            almacenar.textContent = "numeros negativos no tienen raiz";
-            contadora1.length = 0;
-            contadora2.length = 0;
-            ingresar.textContent= "-";
-            cambioSigno.classList.add("hidden");
-            raizNegativa = 1;
-          } else{
-            raizCuadradaParaOperar();
-            operacion();
-            cero = 0;
-            punto = 0;
+        function calculadora(registro){
+          
+      
+      
+        //For entering the numbers from 1 to 9
+        if ( contadora1.length <= 26 &&
+         ( registro === "1" ||
+          registro === "2" ||
+          registro === "3" ||
+          registro === "4" ||
+          registro === "5" ||
+          registro === "6" ||
+          registro === "7" ||
+          registro === "8" ||
+          registro === "9" )
+        ) {
+          //If no number has been entered yet
+          if(contadora1.length === 0){
+            ingresar.textContent = registro;
+            contadora1.push(registro);
+          }//if you have already started entering numbers
+          else{
+            ingresar.textContent += registro;
+            contadora1.push(registro);
           }
         }
-      }
-      //Cuando se selecciona "elevar al cuadrado"
-      if(registro === "c"){
-        if(contadora1.length === 0 && cero === 1 && contenedorOperacion.length === 0){
-         elevarCuadrado();
-          cero = 0;           
-      } else if(contadora1.length !== 0 && contenedorOperacion.length === 0){
-        elevarCuadrado();      
-        masMenos = 0;
-        punto = 0; 
-        cambioSigno.classList.add("hidden");
-      }else if(contadora1.length !== 0 && contenedorOperacion.length !== 0 ){
-          elevarCuadradoParaOperar();
-          operacion();
-          masMenos = 0;
-          punto = 0;
+        
+        //For the entry of the number "0"
+        if(contadora1.length <= 23){
+          if(registro === "0" && contadora1.length !== 0){
+            ingresar.textContent += registro;
+            contadora1.push(registro);
+          } else if(registro === "0" && contadora1.length === 0){
+            cero = 1;
+            ingresar.textContent = 0;
+          }
+        }
+        
+        
+        //To enter the decimal point to the number
+        if(registro === "."){
+        if(punto === 0 && contadora1.length === 0){
+        ingresar.textContent = 0;
+        ingresar.textContent += registro;
+        contadora1.push(0, registro);
+        cero = 0;
+        punto = 1;
+        } else if(punto === 0 && contadora1.length !== 0){
+        ingresar.textContent += registro;
+        contadora1.push(registro);
+        punto = 1;
+        }
+        }
+        //To change the number being entered to negative
+        if(registro === "m"){
+        if(masMenos === 0 && contadora1.length !== 0){
+          contadora1.unshift("-");
+          cambioSigno.classList.remove("hidden");
+          masMenos = 1;
+        }else if(masMenos === 1){
+          contadora1.shift();
           cambioSigno.classList.add("hidden");
-      }
-      }
-      //Cuando se selecciona "1/x"
-      if(registro === "d"){
-        //contenedorOperacion.length = 0;
-  
-        if(contadora1.length === 0 && cero === 1 && (contenedorOperacion.length === 0 || contenedorOperacion.length !== 0 )){
-          divisor();
-          cero = 0;           
-        } else if(contadora1.length !== 0 && contenedorOperacion.length === 0){
-          divisor();      
           masMenos = 0;
-          punto = 0;
-          cambioSigno.classList.add("hidden");
-        } else if(contadora1.length !== 0 && contenedorOperacion.length !== 0 ){
-         
-            divisorParaOperar();
-            operacion();
+        }
+        }   
+        
+        //To show at the end of "store" which operation is being chosen to execute
+          //When "plus" is selected
+          if(registro === "+"){
+            if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
+              contadora2.push(0);
+              almacenar.textContent = 0; 
+              contenedorOperacion.push("sumar");    
+              operacionInicial("+");
+            } else if(contadora2.length === 0){
+              if( cero === 1){
+              contadora2.push(Number(contadora1.join("")));
+              almacenar.textContent = 0; 
+              contadora1.length = 0;
+              ingresar.textContent = "-";
+              masMenos = 0;
+              punto = 0;
+              contenedorOperacion.push("sumar");    
+              operacionInicial("+");
+              cambioSigno.classList.add("hidden");
+              cero === 0;
+              }else{
+              contadora2.push(Number(contadora1.join("")));
+              almacenar.textContent = contadora1.join(""); 
+              contadora1.length = 0;
+              ingresar.textContent = "-";
+              masMenos = 0;
+              punto = 0;
+              contenedorOperacion.push("sumar");
+          
+              operacionInicial("+");
+              cambioSigno.classList.add("hidden");
+            }
+            }else if(contadora2.length !== 0 && contenedorOperacion.length === 0  && (contadora1.length !== 0 || cero === 1)){
+              contadora2.length = 0;
+              contadora2.push(Number(contadora1.join("")));
+              almacenar.textContent = Number(contadora1.join(""));
+              contadora1.length = 0;
+              ingresar.textContent = "-";
+              operacionInicial("+");
+              contenedorOperacion.push("sumar");
+              cero = 0;
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+            }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
+              operacion();
+              contenedorOperacion.length = 0;//
+              contenedorOperacion.push("sumar");
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+              operacionInicial("+");//
+            }else if(contadora2.length !== 0 && contadora1.length === 0){
+              contenedorOperacion.length = 0;//
+              contenedorOperacion.push("sumar");
+              cambiarOperacion("+");
+            }
+        
+          }
+        
+          //When "subtract" is selected
+          if(registro === "-"){
+            if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
+              contadora2.push(0);
+              almacenar.textContent = 0; 
+              contenedorOperacion.push("restar");    
+              operacionInicial("-");
+            } else if(contadora2.length === 0){
+              if( cero === 1){
+                contadora2.push(Number(contadora1.join("")));
+                almacenar.textContent = 0; 
+                contadora1.length = 0;
+                ingresar.textContent = "-";
+                masMenos = 0;
+                punto = 0;
+                contenedorOperacion.push("restar");    
+                operacionInicial("-");
+                cambioSigno.classList.add("hidden");
+                cero === 0;
+                } else {
+              contadora2.push(Number(contadora1.join("")));
+              almacenar.textContent = contadora1.join(""); 
+              contadora1.length = 0;
+              ingresar.textContent = "-";
+              masMenos = 0;
+              punto = 0;
+              contenedorOperacion.push("restar");    
+              operacionInicial("-");
+              cambioSigno.classList.add("hidden");
+            }
+            }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
+              operacion();//
+              contenedorOperacion.length = 0;//
+              contenedorOperacion.push("restar");
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+              operacionInicial("-");//
+        
+            }else if(contadora2.length !== 0 && contadora1.length === 0){
+              contenedorOperacion.length = 0;//
+              contenedorOperacion.push("restar");
+              cambiarOperacion("-");
+            }
+            
+          }
+           //When "multiply" is selected
+           if(registro === "*"){
+            if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
+              contadora2.push(0);
+              almacenar.textContent = 0; 
+              contenedorOperacion.push("multiplicar");    
+              operacionInicial("*");
+            } else if(contadora2.length === 0){
+              if( cero === 1){
+                contadora2.push(Number(contadora1.join("")));
+                almacenar.textContent = 0; 
+                contadora1.length = 0;
+                ingresar.textContent = "-";
+                masMenos = 0;
+                punto = 0;
+                contenedorOperacion.push("multiplicar");    
+                operacionInicial("*");
+                cambioSigno.classList.add("hidden");
+                cero === 0;
+              }else{
+              contadora2.push(Number(contadora1.join("")));
+              almacenar.textContent = contadora1.join(""); 
+              contadora1.length = 0;
+              ingresar.textContent = "-";
+              masMenos = 0;
+              punto = 0;
+              contenedorOperacion.push("multiplicar");    
+              operacionInicial("*");
+              cambioSigno.classList.add("hidden");
+            }
+        
+            }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
+              operacion();
+              contenedorOperacion.length = 0;//
+              contenedorOperacion.push("multiplicar");
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+              operacionInicial("*");//
+        
+            }else if(contadora2.length !== 0 && contadora1.length === 0){
+              contenedorOperacion.length = 0;
+              contenedorOperacion.push("multiplicar");
+              cambiarOperacion("*");
+            }
+            
+          }
+          //When "split" is selected
+          if(registro === "/"){
+            if(contadora1.length === 0 && contadora2.length === 0 && cero === 0){
+              contadora2.push(0);
+              almacenar.textContent = 0; 
+              contenedorOperacion.push("dividir");    
+              operacionInicial("/");
+            } else if(contadora2.length === 0){
+              if( cero === 1){
+                contadora2.push(Number(contadora1.join("")));
+                almacenar.textContent = 0; 
+                contadora1.length = 0;
+                ingresar.textContent = "-";
+                masMenos = 0;
+                punto = 0;
+                contenedorOperacion.push("dividir");    
+                operacionInicial("/");
+                cambioSigno.classList.add("hidden");
+                cero === 0;
+              }else{
+              contadora2.push(Number(contadora1.join("")));
+              almacenar.textContent = contadora1.join(""); 
+              contadora1.length = 0;
+              ingresar.textContent = "-";
+              masMenos = 0;
+              punto = 0;
+              contenedorOperacion.push("dividir");    
+              operacionInicial("/");
+              cambioSigno.classList.add("hidden");
+            }
+        
+            }else if(contadora2.length !== 0 && (contadora1.length !==0 || cero === 1)){
+              operacion();
+              contenedorOperacion.length = 0;//
+              contenedorOperacion.push("dividir");
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+              operacionInicial("/");//
+        
+            }else if(contadora2.length !== 0 && contadora1.length === 0){
+              contenedorOperacion.length = 0;
+              contenedorOperacion.push("dividir");
+              cambiarOperacion("/");
+            }
+            
+          }
+        
+          //When "square root" is selected
+          if(registro === "r"){
+        
+            if(contadora1.length === 0 && cero === 1 && contenedorOperacion.length === 0){
+                raizCuadrada();
+                cero = 0;           
+            } else if(contadora1.length !== 0 && contenedorOperacion.length === 0){
+              raizCuadrada();      
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+            } else if(contadora1.length === 0 && cero === 1 && contenedorOperacion.length !== 0){
+              raizCuadradaParaOperar();
+              operacion();
+              masMenos = 0;
+              cero = 0;
+            } else if(contadora1.length !== 0 && contenedorOperacion.length !== 0 ){
+             
+              if(masMenos === 1){
+                almacenar.textContent = "numeros negativos no tienen raiz";
+                contadora1.length = 0;
+                contadora2.length = 0;
+                ingresar.textContent= "-";
+                cambioSigno.classList.add("hidden");
+                raizNegativa = 1;
+              } else{
+                raizCuadradaParaOperar();
+                operacion();
+                cero = 0;
+                punto = 0;
+              }
+            }
+          }
+          //When "Squaring" is selected
+          if(registro === "c"){
+            if(contadora1.length === 0 && cero === 1 && contenedorOperacion.length === 0){
+             elevarCuadrado();
+              cero = 0;           
+          } else if(contadora1.length !== 0 && contenedorOperacion.length === 0){
+            elevarCuadrado();      
+            masMenos = 0;
+            punto = 0; 
+            cambioSigno.classList.add("hidden");
+          }else if(contadora1.length !== 0 && contenedorOperacion.length !== 0 ){
+              elevarCuadradoParaOperar();
+              operacion();
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+          }
+          }
+          //When "1/x" is selected
+          if(registro === "d"){
+        
+            if(contadora1.length === 0 && cero === 1 && (contenedorOperacion.length === 0 || contenedorOperacion.length !== 0 )){
+              divisor();
+              cero = 0;           
+            } else if(contadora1.length !== 0 && contenedorOperacion.length === 0){
+              divisor();      
+              masMenos = 0;
+              punto = 0;
+              cambioSigno.classList.add("hidden");
+            } else if(contadora1.length !== 0 && contenedorOperacion.length !== 0 ){
+             
+                divisorParaOperar();
+                operacion();
+                masMenos = 0;
+                punto = 0;
+                cambioSigno.classList.add("hidden");
+            }
+          }
+          //When "=" is selected
+          if (registro === "=" ){
+            if(contadora2.length === 0 && (contadora1.length !== 0 || cero === 1)){
+              let numeroIngresar = Number(contadora1.join(""));
+              contadora2.push(numeroIngresar);
+              almacenar.textContent = numeroIngresar;
+              ingresar.textContent = "-";
+              contadora1.length = 0;
+              masMenos = 0;
+              punto = 0;
+              cero = 0;
+              cambioSigno.classList.add("hidden");
+            }else if(contadora2.length !== 0 && (contadora1.length !== 0 || cero === 1)){
+              operacion();
+              masMenos = 0;
+              punto = 0;
+              cero = 0;
+              cambioSigno.classList.add("hidden");        
+            }else if(contadora2.length !==0 && contadora1.length === 0 && cero === 0){
+              let tieneHijo = almacenar.querySelector(":first-child")!== null;
+              tieneHijo? almacenar.removeChild(almacenar.firstElementChild):"";
+            }
+          }
+          //When "C" is selected
+          if(registro === "et" ){
+            contadora1.length= 0;
+            contadora2.length = 0;
+            almacenar.textContent ="-";
+            ingresar.textContent = "-";
+            contenedorOperacion.length = 0;
             masMenos = 0;
             punto = 0;
+            cero = 0;
             cambioSigno.classList.add("hidden");
-        }
+            dividirCero = 0;
+            raizNegativa = 0;
+            for(let i = 2; i < btnDisabled.length; i++){
+              btnDisabled[i].disabled = false;      
+            };
+          }
+          //When "CE" is selected
+          if(registro === "ep"){
+            contadora1.length = 0;
+            ingresar.textContent ="-";
+            masMenos = 0;
+            punto = 0;
+            cero = 0;
+            cambioSigno.classList.add("hidden");
+          }
       }
-      //Cuando se selecciona "="
-      if (registro === "=" ){
-        if(contadora2.length === 0 && (contadora1.length !== 0 || cero === 1)){
-          let numeroIngresar = Number(contadora1.join(""));
-          contadora2.push(numeroIngresar);
-          almacenar.textContent = numeroIngresar;
-          ingresar.textContent = "-";
-          contadora1.length = 0;
-          masMenos = 0;
-          punto = 0;
-          cero = 0;
-          cambioSigno.classList.add("hidden");
-        }else if(contadora2.length !== 0 && (contadora1.length !== 0 || cero === 1)){
-          operacion();
-          masMenos = 0;
-          punto = 0;
-          cero = 0;
-          cambioSigno.classList.add("hidden");        
-        }else if(contadora2.length !==0 && contadora1.length === 0 && cero === 0){
-          let tieneHijo = almacenar.querySelector(":first-child")!== null;
-          tieneHijo? almacenar.removeChild(almacenar.firstElementChild):"";
-        }
-      }
-      //Cuando se selecciona "C"
-      if(registro === "et" ){
-        contadora1.length= 0;
-        contadora2.length = 0;
-        almacenar.textContent ="-";
-        ingresar.textContent = "-";
-        contenedorOperacion.length = 0;
-        masMenos = 0;
-        punto = 0;
-        cero = 0;
-        cambioSigno.classList.add("hidden");
-        dividirCero = 0;
-        raizNegativa = 0;
-        for(let i = 2; i < btnDisabled.length; i++){
-          btnDisabled[i].disabled = false;      
-        };
-      }
-      //Cuando se selecciona "CE"
-      if(registro === "ep"){
-        contadora1.length = 0;
-        ingresar.textContent ="-";
-        masMenos = 0;
-        punto = 0;
-        cero = 0;
-        cambioSigno.classList.add("hidden");
-      }
+  
     
-}
-
-d.addEventListener("keydown", (e) => {
-
-//Para deshabilitar los botones, el ingreso de numeros y operaciones, por consola cuando se intente dividir por "0"
-if(dividirCero === 1 || raizNegativa === 1){
-  e.preventDefault();
-  return false;
-}
-
-//Para el ingreso de los numeros del 1 al 9
-if(e.key === "1" ||
-  e.key === "2" ||
-  e.key === "3" ||
-  e.key === "4" ||
-  e.key === "5" ||
-  e.key === "6" ||
-  e.key === "7" ||
-  e.key === "8" ||
-  e.key === "9" ||
-  e.key === "0"){
-    calculadora(e.key);
-}
-
-//Para ingresar el punto decimal al numero
-if(e.key === "."){
-  calculadora(e.key);
-}
-
-//Para mostrar al final de "almacenar" que operacion se esta escogiendo para ejecutar
-//Cuando se selecciona "sumar"
-if(e.key === "+"){
-  calculadora(e.key);
-}
-//Cuando se selecciona "restar"
-if(e.key === "-"){
-  calculadora("-");
-}
-//Cuando se selecciona "multiplicar"
-if(e.key === "*"){
-  calculadora("*");
-}
-//Cuando se selecciona "dividir"
-if(e.key === "/"){
-  calculadora("/");
-}
-//Cuando se selecciona "igual"
-if(e.key === "="){
-  calculadora("=");
-}
-
-
-});
-
-
-d.addEventListener("click",(e)=>{
-
- //Para deshabilitar los botones, el ingreso de numeros y operaciones, por pantalla cuando se intente dividir por "0"
-if(dividirCero === 1 || raizNegativa === 1){
-  for(let i = 2; i < btnDisabled.length; i++){
-    btnDisabled[i].disabled = true;      
-  };
-}; 
-
-if(e.target === btnC){
-  calculadora("et");
-};
-
-if(dividirCero === 0 && raizNegativa === 0){
-
-  switch (e.target){
-    //Para el ingreso de los numeros del 1 al 9
-      case btnNueve:
-        calculadora("9");
-        break;
-      case btnOcho:
-        calculadora("8");
-        break;
-      case btnSiete:
-        calculadora("7");
-        break;
-      case btnSeis:
-        calculadora("6");
-        break;
-        case btnCinco:
-        calculadora("5");
-        break;
-      case btnCuatro:
-        calculadora("4");
-        break;
-      case btnTres:
-        calculadora("3");
-        break;
-      case btnDos:
-        calculadora("2");
-        break;
-        case btnUno:
-        calculadora("1");
-        break;
-      case btnCero:
-        calculadora("0");
-        break;    
-    //Para ingresar el punto decimal al numero
-      case btnPunto:
-        calculadora(".");
-        break;
-    //Para cambiar a negativo el numero que se esta ingresando
-      case btnSigno:
-        calculadora("m");
-        break;
-    /*Para mostrar al final de "almacenar" que operacion se esta escogiendo para ejecutar*/
-    //Cuando se selecciona "sumar"
-      case btnMas:
-        calculadora("+");
-        break;
-    //Cuando se selecciona "restar"
-      case btnMenos:
-        calculadora("-");
-        break;
-    //Cuando se selecciona "multiplicar"
-      case btnPor:
-        calculadora("*");
-        break;
-    //Cuando se selecciona "dividir"
-      case btnDividir:
-        calculadora("/");
-        break;
-    //Cuando se selecciona "raiz cuadrada"
-      case btnRaiz:
-        calculadora("r");
-        break;
-    //Cuando se selecciona "elevar al cuadrado"
-      case btnCuadrado:
-        calculadora("c");
-        break; 
-    //Cuando se selecciona "1/x"
-      case btnDivisor:
-        calculadora("d");
-        break;
-    //Cuando se selecciona "="
-      case btnIgual:
-        calculadora("=");
-        break;
-    //Cuando se selecciona "CE"
-      case btnCe:
-        calculadora("ep");
-        break;
+    
+    d.addEventListener("keydown", (e) => {
+    
+    //To disable the buttons, the entry of numbers and operations, by console when trying to divide by "0"
+    if(dividirCero === 1 || raizNegativa === 1){
+      e.preventDefault();
+      return false;
     }
-};
+    
+    //For entering the numbers from 1 to 9
+    if(e.key === "1" ||
+      e.key === "2" ||
+      e.key === "3" ||
+      e.key === "4" ||
+      e.key === "5" ||
+      e.key === "6" ||
+      e.key === "7" ||
+      e.key === "8" ||
+      e.key === "9" ||
+      e.key === "0"){
+        calculadora(e.key);
+    }
+    
+    //To enter the decimal point to the number
+    if(e.key === "."){
+      calculadora(e.key);
+    }
+    
+    //To show at the end of "store" which operation is being chosen to execute
+    //When "plus" is selected
+    if(e.key === "+"){
+      calculadora(e.key);
+    }
+    //Cuando se selecciona "restar"
+    if(e.key === "-"){
+      calculadora("-");
+    }
+    //When "subtract" is selected
+    if(e.key === "*"){
+      calculadora("*");
+    }
+    //When "split" is selected
+    if(e.key === "/"){
+      calculadora("/");
+    }
+    //When "equal" is selected
+    if(e.key === "="){
+      calculadora("=");
+    }
+    
+    
+    });
+  
+    d.addEventListener("click",(e)=>{
+    
+     //To disable the buttons, the entry of numbers and operations, on the screen when trying to divide by "0"
+    if(dividirCero === 1 || raizNegativa === 1){
+      for(let i = 2; i < btnDisabled.length; i++){
+        btnDisabled[i].disabled = true;      
+      };
+    }; 
+    
+    if(e.target === btnC){
+      calculadora("et");
+    };
+    
+    if(dividirCero === 0 && raizNegativa === 0){
+    
+      switch (e.target){
+        //For the input of the numbers from 1 to 9
+          case btnNueve:
+            calculadora("9");
+            break;
+          case btnOcho:
+            calculadora("8");
+            break;
+          case btnSiete:
+            calculadora("7");
+            break;
+          case btnSeis:
+            calculadora("6");
+            break;
+            case btnCinco:
+            calculadora("5");
+            break;
+          case btnCuatro:
+            calculadora("4");
+            break;
+          case btnTres:
+            calculadora("3");
+            break;
+          case btnDos:
+            calculadora("2");
+            break;
+            case btnUno:
+            calculadora("1");
+            break;
+          case btnCero:
+            calculadora("0");
+            break;    
+        //To insert the decimal point to the number
+          case btnPunto:
+            calculadora(".");
+            break;
+        //To change the number being entered to negative
+          case btnSigno:
+            calculadora("m");
+            break;
+        /*To show at the end of "store" which operation is being chosen to execute*/
+        //When "plus" is selected
+          case btnMas:
+            calculadora("+");
+            break;
+        //When "subtract" is selected
+          case btnMenos:
+            calculadora("-");
+            break;
+        //When "multiply" is selected
+          case btnPor:
+            calculadora("*");
+            break;
+        //When "split" is selected
+          case btnDividir:
+            calculadora("/");
+            break;
+        //When "square root" is selected
+          case btnRaiz:
+            calculadora("r");
+            break;
+        //When "Squaring" is selected
+          case btnCuadrado:
+            calculadora("c");
+            break; 
+        //When "1/x" is selected
+          case btnDivisor:
+            calculadora("d");
+            break;
+        //When "=" is selected
+          case btnIgual:
+            calculadora("=");
+            break;
+        //When "CE" is selected
+          case btnCe:
+            calculadora("ep");
+            break;
+        }
+    };
+    
+    
+      
+    });
+  
+  })
+
+  }
+  
+
+}
+
 
 
   
-});
+  
+
+
 

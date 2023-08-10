@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@1,200&display=swap"
       rel="stylesheet">
       <link rel="stylesheet" href="./css/style.css">
-    <title>Lista de víveres</title>
+    <title>Conversor de divisas</title>
 </head>
 <body>
   <!--Header starts-->
@@ -74,14 +74,15 @@
       </header>
   <!--Header ends-->
 
-  <!--Menu-hamburger button-->
+  <!--Menu-hamburger button-->     
       <button class="btnMenu">
         <img class="btnMenu__logo" src="./img/menu.svg">
       </button>
-
-      <!--Panel starts-->    
+    
+  <!--Panel starts-->
       <aside class="panel">
-        <nav class="panel__menu"><a href="index.html" class="panel__menu-options">Inicio</a>
+        <nav class="panel__menu">
+          <a href="index.html" class="panel__menu-options">Inicio</a>
           <a href="planes.html" class="panel__menu-options">Planes</a>
           <a href="compania.html" class="panel__menu-options">Compañía</a>
           <a href="nuestra-diferencia.html" class="panel__menu-options">Nuestra diferencia</a>
@@ -90,52 +91,107 @@
           <a href="ingresar.html" class="panel__menu-options">Ingresar</a>
         </nav>
       </aside>
-      <!--Panel ends-->    
+  <!--Panel ends-->
 
-      <!--Main starts-->
+  <!--Main starts-->
       <main>
-        <section class="list-cont">
-            <section class="list-cont__container">
-                <!--Alerts-->
-                <div class="list-cont__alert">
-                    <p class="list-cont__alert-text">Se ha eliminado un item</p>
+        <section class="conversor-cont">
+
+          <h2 class="conversor-cont__title">Conversor de divisas</h2>
+
+          <div class="conversor-cont__content">
+
+            <div class="conversor-cont__inputs">
+              <input type="number" id="conversor-cont__info" class="conversor-cont__input" placeholder=" -Ingrese el monto- " pattern="^[0-9]*[0-9]$" required>
+              <input type="number" class="conversor-cont__resul conversor-cont__input" placeholder=" -Divisa convertida-" disabled>
+            </div>
+
+            <div class="conversor-cont__options">
+              <select class="conversor-cont__value1 conversor-cont__select">
+                <option value="">--Divisa inicial</option>
+              </select>
+              <select class="conversor-cont__value2 conversor-cont__select ">
+                <option value="">--Divisa requerida</option>
+              </select>
+            </div>
+
+          </div>
+
+          <h3 class="conversor-cont__alert">El valor ingresado no es válido</h3>
+
+          <div class="conversor-cont__btns">
+            <button class="conversor-cont__converter conversor-cont__btn">Convertir</button>
+            <button class="conversor-cont__delete conversor-cont__btn">Borrar</button>
+          </div>
+
+          <section class="conversor-cont__historical-cont">
+
+            <h3 class="conversor-cont__historical">Histórico de datos</h3>
+  
+            <div class="conversor-cont__dateInfo">
+  
+              <div class="conversor-cont__indivDate">
+                <label for="conversor-cont__initDate">Fecha inicial</label>
+                <input type="date" id="conversor-cont__initDate" min="2000-01-02">
+              </div>
+  
+             <div class="conversor-cont__indivDate">
+               <label for="conversor-cont__finDate">Fecha Final</label>
+               <input type="date" id="conversor-cont__finDate" min="2000-01-02">
+             </div>            
+  
+            </div>
+  
+            <button class="conversor-cont__btnHistorical conversor-cont__btn">Obtener</button>
+
+
+            <div class="conversor-cont__info-result">
+
+              <div class="conversor-cont__info-currency">
+                <h3>Divisa inicial</h3>
+                <h4 class="conversor-cont__initial-currency">Divisa</h4>
+              </div>
+
+              <div class="conversor-cont__info-currency">
+                <h3>Divisa requerida</h3>
+                <h4 class="conversor-cont__required-currency">Divisa</h4>
+              </div>
+
+              <div class="conversor-cont__info-currency">
+                <div class="conversor-cont__print-date">
                 </div>
-                <!--Form-->
-                <form class="list-cont__input">
-                    <h3 class="list-cont__title">Lista de víveres</h3>
-                    <!--Information input-->
-                    <div class="list-cont__cont-input">
-                        <input type="text" class="list-cont__input-text" placeholder=" ingresa el item a tu lista...">
-                        <!--Button input-->
-                        <button type="submit" class="list-cont__btn-add">Agregar</button>
-                    </div>
-                </form>
-                <!--List items-->
-                <section class="list-cont__cont-items">
-                    <div class="list-cont__btn-cont">
-                        <button class="list-cont__btn-delete">Borrar lista</button>
-                    </div>
-                </section>  
-            </section>
+                <div class="conversor-cont__print-data"> 
+                </div>
+              </div>
+
+              <p class="conversor-cont__note">Nota:Para los fines de semana no existe registro de información</p>
+
+            </div>
+            
+          </section>
+                    
         </section>
 
       </main>
-      <!--Main ends-->
-      <!--Footer starts-->
+  <!--Main ends-->
+
+  <!--Footer starts-->
       <footer class="footer footer-conversor">
-          <div class="footer__social footer__social--margin">
-      <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
-      <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
-      <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
-      <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
-          </div>
-          <div class="footer__copyright footer__copyright--height">
-      <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
-      <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
-          </div>
-         </footer>
-      <!--Footer ends-->
-         <!--js script-->
-      <script src="logica.js" type="module"></script>
+        <div class="footer__social footer__social--margin">
+    <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
+    <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
+    <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
+    <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
+        </div>
+        <div class="footer__copyright footer__copyright--height">
+    <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
+    <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
+        </div>
+       </footer>
+  <!--Footer ends-->
+
+  <!--js script-->
+       <script src="logica.js" type="module"></script>
+    
 </body>
 </html>

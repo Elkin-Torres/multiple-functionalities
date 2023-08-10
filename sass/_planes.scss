@@ -1,0 +1,306 @@
+@use "mixins";
+
+.planes-cont{
+    @include mixins.flex-box(column,nowrap,center,center);
+    width: 100%;
+    margin: 0 auto;
+
+    &__title{
+        margin-top: 1.5rem;
+        margin-bottom: .7rem
+    }
+
+    &__options{
+        @include mixins.flex-box(row,wrap, center,center);
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__option:hover{
+        cursor: pointer;
+        border-bottom: thin solid var(--color-second);
+    }
+
+    &__empresariales{
+        position: relative;
+        width: 100%;
+        height: 28.125rem;
+        margin-top: 1rem;
+
+        &::after{
+            content: "";
+            position: absolute;
+            height: 28.125rem;
+            width: 100%;
+            background-color: black;
+            opacity: 0.7;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__img-cont{
+        height: inherit;
+    }
+
+    &__img{
+        width: 100%;
+        height: inherit;
+    }
+
+    &__business-cont{
+        @include mixins.flex-box(row, wrap, center,flex-start);
+        position: absolute;
+        margin-bottom: 2rem;
+        top: 0;
+        color: white;
+        z-index: 2;
+        gap: 2rem;
+
+        & div{
+            width: 40%;
+            height: auto;
+            text-align: center;
+        }
+
+        & div h2 {
+            margin: 2rem 0;
+        }
+    }
+    
+
+    &__business-items li{
+        font-style: var(--font-secondary);
+        font-weight: var(--fw-xs);
+    }
+
+    &__students-cont{
+        width: 100%;
+        height: auto;
+    }
+
+    &__students-cont h2{
+        width: 80%;
+        margin: 2rem auto;
+        text-align: center;
+    }
+
+    &__students-items,
+    &__academic-items{
+        @include mixins.flex-box(row, wrap, center,center);
+        width: 80%;
+        margin: 0 auto;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    &__student-item,
+    &__academic-item{
+        @include mixins.flex-box(column,nowrap,center,center);
+        width: 30%;
+        gap: 1rem;
+
+        & span{
+            font-size: 4.5rem;
+        }
+
+        & h3{
+            font-weight: var(--fw-l);
+        }
+
+        & p {
+            text-align: center;
+        }
+    }
+
+    &__freelancer-cont{
+        position: relative;
+        width: 100%;
+        height: 28.125rem;
+        color: white;
+
+        &::after{
+            content: "";
+            position: absolute;
+            height: inherit;
+            width: 100%;
+            background-color: black;
+            opacity: 0.6;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+    }
+
+
+
+    &__img-cont{
+        position: absolute;
+        top: 0;
+    }
+
+    &__img-freelancer{
+        height: inherit;
+    }
+
+    &__info-freelancer{
+        position: absolute;
+        width: 100%;
+        margin:0 auto;
+        height: inherit;
+        z-index: 2;
+
+        & h2{
+            width: 80%;
+            margin: 1rem auto;
+            text-align: center;
+        }
+
+        & p {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    &__items-freelancer{
+        @include mixins.flex-box(row,wrap, center,center);
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &__item-freelancer{
+        @include mixins.flex-box(column,nowrap,center,center);
+        width: 50%;
+        gap: 1rem;
+
+        & span{
+            font-size: 4.5rem;
+        }
+
+        & h3{
+            font-weight: var(--fw-l);
+        }
+    }
+
+    &__miPymes-cont{
+        width: 100%;
+        height: auto;
+
+        & h2{
+            width: 80%;
+            margin: 2rem auto;
+            text-align: center;
+        }
+    }
+
+    &__miPymes-info{
+        @include mixins.flex-box(row,wrap, center,center);
+        width: 80%;
+        height: auto;
+        margin: 1rem auto 2rem;
+        gap: 1rem;
+    }
+
+    &__miPymes-items{
+        @include mixins.flex-box(row,nowrap,center,center);
+        width: 30%;
+        gap: 1rem;
+        background-color: #f166219c;
+        border-radius: 8px;
+        padding: 1rem;
+
+        & span{
+            width: 30%;
+            font-size: 4.5rem;
+        }
+    }
+
+    &__miPymes-text{
+        width: 70%;
+        text-align: center;
+
+        & h3{
+            font-weight: var(--fw-l);
+        }
+    }
+
+    &__academic-cont{
+        position: relative;
+        width: 100%;
+        height: 28.125rem;
+
+        & figure{
+            height: inherit;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: inherit;
+            background-color: black;
+            opacity: 0.6;
+            z-index: 1;
+            top: 0;
+        }
+    }
+
+    &__academic-img{
+        width: 100%;
+        height: inherit;
+    }
+
+    &__academic-info{
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        z-index: 2;
+        top: 0;
+        color: white;
+
+        & h2{
+            width: 80%;
+            margin: 2rem auto;
+            text-align: center;
+        }
+    }
+
+    &__menu-options{
+        @include mixins.flex-box(column,nowrap,center,flex-end);
+        position: fixed;
+        z-index: 990;
+        gap: 1rem;
+        top: 40%;
+        right: 5%;
+    }
+
+    &__menu-option{
+
+       & a{
+        @include mixins.flex-box(row, nowrap,center,center);
+        gap: .5rem;
+       } 
+
+        & span{
+            color: var(--color-second);
+        }
+
+        & a :nth-child(1){
+            font-weight: 700;
+            display: none;
+        }     
+        
+    }
+
+    &__circle:hover{
+        background-color: var(--color-second);
+        border-radius: 50%;
+    }
+
+    &__circle:hover .planes-cont__text-option{
+        display: block;
+    }
+
+}

@@ -2,6 +2,7 @@ const d = document,
 escrito = d.querySelector(".cont-diferencia__escrito"),
 btns = d.querySelectorAll(".cont-diferencia__btn");
 
+//Information 
 const info = [
     {
     id:"motivacion",
@@ -17,25 +18,33 @@ const info = [
     }
 
 ]
-
+//function exported to logica.js
 export function diferencia(){
-
+    //Inserta el contenido seleccionado
     function cambiar(cambio){
         let insercion = cambio.map(function(obj){
            return obj.contenido;
         });
         escrito.innerHTML = insercion;
     }
-
+//in all btns execute the following...
  btns.forEach(function(btn){
+    //when a btn is clicked
     btn.addEventListener("click",(e)=>{
+        //in all btns...
         btns.forEach(function(other){
+            //take class away...
             other.classList.remove("cont-diferencia__btn-active");
         });
+        //detect which button was clicked
         const option = e.target;
+        //store the data-id of the button that was clicked
         const id = e.currentTarget.dataset.id;
+        //filter the content of the selected id
         const infoFilter = info.filter(data => data.id === id);
+        //function cambiar
         cambiar(infoFilter);
+        //add the class to the selected btn
         option.classList.add("cont-diferencia__btn-active");
     })
 })

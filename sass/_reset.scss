@@ -1,14 +1,15 @@
 :root{
-  /*Color fuentes*/
+  /*font colors*/
 --color-main: #606470;
 --color-second: #f16821;
-/*Estilo de fuentes*/
+/*fonts style*/
 --font-primary: "Quicksand", sans-serif;
 --font-secondary: "Raleway", sans-serif;
-/*Tamaño de fuentes*/
+/*fonts size*/
 --font-h1: 1.875rem;
 --font-h2: 1.625rem;
 --font-h3: 1.25rem;
+--font-h4: 1.125rem;
 --font-p: 1rem;
 --font-li: 1rem;
 --font-span:1.125rem;
@@ -94,6 +95,12 @@ h3{
   font-size: var(--font-h3);
   color: inherit;
   font-weight: var(--fw-s);
+}
+
+h4{
+  font-size: var(--font-primary);
+  color: inherit;
+  font-weight: var(--fw-m);
 }
 
 p{

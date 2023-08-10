@@ -1,12 +1,8 @@
+//Selected elements in "catalogo.html"
 const d = document,
-    seccion = d.querySelector(".catalogue-cont__info"),
-    btns = d.querySelectorAll(".catalogue-cont__btn"),
-    btnsContainer = d.querySelector(".catalogue-cont__btns");
+    title = d.querySelector(".catalogue-cont__title");
     
-//Informacion vehiculos
-
-//Para imprimir los vehiculos dinamicamente en "catalogo.html"
-
+//Vehicle´s information
 const album = [
     {
         marca:"Mazda",
@@ -115,8 +111,27 @@ const album = [
 
 ]
 
-export function catalogo(){    
+//Function exported to logica.js
+export function catalogo(){ 
         
+    //The code is executed when document is loaded
+    d.addEventListener("DOMContentLoaded",()=>{
+
+        //A section is created, attributes are added to it and it is added to catalogo.html
+        let section = d.createElement("section");
+            section.classList.add("catalogue-cont__info");
+            if(title){                
+                title.insertAdjacentElement("afterend",section);
+            }
+
+        //A div is created, attributes are added to it and it is added to catalogo.html
+        let btnsContainer = d.createElement("div");
+            btnsContainer.classList.add("catalogue-cont__btns");
+            if(title){
+                title.insertAdjacentElement("afterend", btnsContainer);
+            }
+
+        //Cars are added with "album" information
         function impCar(albumItem){
             let albumMap = albumItem.map(function(obj){
                 return `<div class="catalogue-cont__car">
@@ -134,37 +149,36 @@ export function catalogo(){
                 </div>
               </div>`;
               });
+            //Quotation marks are removed from albumMap 
             albumMap = albumMap.join("");
-            //console.log(albumMap);
-                
-                
-                seccion.innerHTML = albumMap;     
-
+            
+            //albumMap´s information is added to the previously created section
+            section.innerHTML = albumMap;      
         
-        
-        }
-             //Se identifican los registros unicos de "marcas" en el array de objetos "album" y se crea un nuevo array con ellos
+        }    //Unique "marcas" records in "album" are identified and a new array is created with them.
             const marcasAlbum = album.reduce(function(marcas, vehiculo){
                 !marcas.includes(vehiculo.marca)? marcas.push(vehiculo.marca):"";
         
                 return marcas;
             },["Todos"]);
         
-            //con el nuevo array, se crean dinamicamente los botones para poder hacer el filtro de los vehiculos mas adelante
+            //With the new array, the buttons are dynamically created to be able to filter the vehicles later
             const filtroMarcas = marcasAlbum.map(function(marca){
              return `<button class="catalogue-cont__btn" data-id=${marca}>${marca}</button>`
             }).join("");
-        
-            btnsContainer.innerHTML = filtroMarcas;    
+            
+            //filtroMarcas´s information is added to btnsContainer
+            btnsContainer.innerHTML = filtroMarcas;
+    
         
          
-        
+        //impCar function is call
          impCar(album);
         
-         //Se seleccionan en esta parte los botones creados dinamicamente
+         //Dynamically created buttons are selected 
         const btns = d.querySelectorAll(".catalogue-cont__btn"); 
         
-        //Se crea el filtro para que el usuario pueda seleccionar que marca de vehiculo quiere ver
+        //The filter is created so that the user can select which brand of vehicle he wants to see
         btns.forEach(function(btn){
             btn.addEventListener("click",(e)=>{
                 const dataId = e.currentTarget.dataset;
@@ -176,9 +190,7 @@ export function catalogo(){
                 }
             })
         })
-
-    
-
+    })
 
 
 }

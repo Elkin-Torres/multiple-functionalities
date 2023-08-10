@@ -8,8 +8,10 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@1,200&display=swap"
       rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       <link rel="stylesheet" href="./css/style.css">
-    <title>Lista de víveres</title>
+      
+    <title>Biblioteca de imágenes</title>
 </head>
 <body>
   <!--Header starts-->
@@ -73,15 +75,14 @@
     
       </header>
   <!--Header ends-->
-
   <!--Menu-hamburger button-->
       <button class="btnMenu">
         <img class="btnMenu__logo" src="./img/menu.svg">
       </button>
-
-      <!--Panel starts-->    
+      <!--Panel starts-->
       <aside class="panel">
-        <nav class="panel__menu"><a href="index.html" class="panel__menu-options">Inicio</a>
+        <nav class="panel__menu">
+          <a href="index.html" class="panel__menu-options">Inicio</a>
           <a href="planes.html" class="panel__menu-options">Planes</a>
           <a href="compania.html" class="panel__menu-options">Compañía</a>
           <a href="nuestra-diferencia.html" class="panel__menu-options">Nuestra diferencia</a>
@@ -90,52 +91,70 @@
           <a href="ingresar.html" class="panel__menu-options">Ingresar</a>
         </nav>
       </aside>
-      <!--Panel ends-->    
-
+      <!--Panel ends-->
       <!--Main starts-->
       <main>
-        <section class="list-cont">
-            <section class="list-cont__container">
-                <!--Alerts-->
-                <div class="list-cont__alert">
-                    <p class="list-cont__alert-text">Se ha eliminado un item</p>
+        <!--library-cont start-->
+        <section class="library-cont">
+            <div class="library-cont__contTitle">
+                <span class="material-symbols-outlined">photo_camera</span>
+                <h2 class="library-cont__title">Buscador de imágenes</h2>
+            </div>
+            <div class="library-cont__information-cont">
+              <div class="library-cont__information">
+                  <input type="text" class="library-cont__input" placeholder=" Dinos que quieres ver...">
+                  <span class="material-symbols-outlined library-cont__search">
+                  search
+                  </span>
                 </div>
-                <!--Form-->
-                <form class="list-cont__input">
-                    <h3 class="list-cont__title">Lista de víveres</h3>
-                    <!--Information input-->
-                    <div class="list-cont__cont-input">
-                        <input type="text" class="list-cont__input-text" placeholder=" ingresa el item a tu lista...">
-                        <!--Button input-->
-                        <button type="submit" class="list-cont__btn-add">Agregar</button>
-                    </div>
-                </form>
-                <!--List items-->
-                <section class="list-cont__cont-items">
-                    <div class="list-cont__btn-cont">
-                        <button class="list-cont__btn-delete">Borrar lista</button>
-                    </div>
-                </section>  
-            </section>
-        </section>
+                
+                <p class="library-cont__numPg">párrafo</p>
+              </div>
+              
 
+            <div class="library-cont__btns-cont">
+              <div class="library-cont__btns">
+                <button class="library-cont__return"> 
+                  <span class="material-symbols-outlined library-cont__arrowBack">
+                    arrow_back
+                  </span>
+                </button>
+                <span class="library-cont_firstNum library-cont__optionNum">1</span>
+                <span class="library-cont__secondNum library-cont__optionNum">2</span>
+                <span class="library-cont__thirdNum library-cont__optionNum">3</span>
+                <span class="library-cont__notNum">...</span>
+                <span class="library-cont__lastNum library-cont__optionNum">?</span>
+                <button class="library-cont__advanced">
+                  <span class="material-symbols-outlined library-cont__arrowForward">
+                    arrow_forward
+                    </span>
+                </button>
+              </div>
+
+              <p class="library-cont__numPg">párrafo</p>
+              
+            </div>
+
+        </section>
+        <!--library-cont end-->
       </main>
       <!--Main ends-->
-      <!--Footer starts-->
+
+      <!--footer starts-->
       <footer class="footer footer-conversor">
-          <div class="footer__social footer__social--margin">
-      <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
-      <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
-      <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
-      <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
-          </div>
-          <div class="footer__copyright footer__copyright--height">
-      <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
-      <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
-          </div>
-         </footer>
-      <!--Footer ends-->
-         <!--js script-->
-      <script src="logica.js" type="module"></script>
+        <div class="footer__social footer__social--margin">
+    <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
+    <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
+    <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
+    <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
+        </div>
+        <div class="footer__copyright footer__copyright--height">
+    <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
+    <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
+        </div>
+       </footer>
+      <!--footer ends-->
+      <!--js script-->
+    <script src="logica.js" type="module"></script>
 </body>
 </html>

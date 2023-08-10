@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@1,200&display=swap"
       rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Contadora</title>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> 
+    <title>Ingresar</title>
 </head>
 <body>
-  <!--Header starts-->
+      <!--Header starts-->
   <header class="header header-conversor">
     <a href="index.html" class="header__logo">
       <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
@@ -74,13 +75,11 @@
 
   </header>
   <!--Header ends-->
-
-  <!--Menu-hamburger button-->     
-  <button class="btnMenu">
-    <img class="btnMenu__logo" src="./img/menu.svg">
-  </button>
-
-  <!--Panel starts-->
+    <!--Menu-hamburger button-->  
+    <button class="btnMenu">
+        <img class="btnMenu__logo" src="./img/menu.svg">
+      </button>
+  <!--Panel starts-->    
   <aside class="panel">
     <nav class="panel__menu">
       <a href="index.html" class="panel__menu-options">Inicio</a>
@@ -92,38 +91,42 @@
       <a href="ingresar.html" class="panel__menu-options">Ingresar</a>
     </nav>
   </aside>
-  <!--Panel ends-->
-
+  <!--Panel ends--> 
   <!--Main starts-->
-    <main>
-        <section class="cont-container">
-            <h1 class="cont-container__title">Contador</h1>
-            <span class="cont-container__numero">0</span>
-            <div class="cont-container__btns">
-                <button class="cont-container__btn cont-container__disminuir">Disminuir</button>
-                <button class="cont-container__btn cont-container__formatear">Formatear</button>
-                <button class="cont-container__btn cont-container__aumentar">Aumentar</button>
-            </div>
-        </section>
+  <main>
+    <section class="enter-cont">
+        <span class="material-symbols-outlined enter-cont__img animate__animated animate__flipInX animate__delay-1s">
+        person
+        </span>
+        <form  class="enter-cont__form">
+            <input type="text" placeholder="Ingrese su usuario">
+            <input type="password" placeholder="Ingrese su contraseña">
+            <input type="submit" class="animate__animated animate__flipInX animate__delay-1s">            
+        </form>
+        <p class="animate__animated animate__flipInX animate__delay-1s">Restablecer contraseña</p>
+        <span class="animate__animated animate__flipInX animate__delay-2s">- El ingreso es para colaboradores de nuestra organización -</span>
 
-    </main>
-  <!--Main starts-->
-  <!--Footer starts-->
-  <footer class="footer footer-conversor">
-    <div class="footer__social footer__social--margin">
-<img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
-<img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
-<img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
-<img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
-    </div>
-    <div class="footer__copyright footer__copyright--height">
-<img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
-<span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
-    </div>
-   </footer>
-  <!--Footer ends-->
+    </section>
 
-<!--js script-->
-<script src="logica.js" type="module"></script>
+  </main>
+  <!--Main ends-->
+      <!--Footer starts-->
+      <footer class="footer footer-conversor">
+        <div class="footer__social footer__social--margin">
+        <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
+        <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
+        <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
+        <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
+        </div>
+        <div class="footer__copyright footer__copyright--height">
+        <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
+        <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
+        </div>
+       </footer>
+      <!--Footer ends-->   
+      <!--js script-->
+      <script src="logica.js" type="module"></script>
+
+    
 </body>
 </html>

@@ -11,7 +11,7 @@ const d =  document,
       modalText = d.querySelector(".modal__text"),
       btnCerrar = d.querySelector(".modal__cerrar");
 
-
+//Movie information
 const peliculas = [
     {
         img: "./img/mr.nobody.png",
@@ -50,12 +50,60 @@ const peliculas = [
     }
 ];
 
-
-
-
+//to control how information is displayed
 let contadora = 0;
 
+//function exported to logica.js
+export function resenias(){
+    //on all buttons run...
+    btns.forEach(function(btn){
+        //when clicking on the btn, execute...
+        btn.addEventListener("click" , (e)=>{
+            //save the classes that have the btn selected
+            const btnClick = e.currentTarget.classList;
+            //if the btn contains the class "resenias-cont__btn-right"
+            if(btnClick.contains("resenias-cont__btn-right")){
+                contadora++;  
+                if(contadora > peliculas.length -1){
+                    contadora = 0;
+                }
+                //function cambiarPelicula
+                cambiarPelicula();
+            }//if the btn contains the class "resenias-cont__btn-left"
+            else if(btnClick.contains("resenias-cont__btn-left")){
+                contadora--;
+                if(contadora < 0){
+                    contadora = peliculas.length - 1;
+                }
+                //function cambiarPelicula
+                cambiarPelicula();
+            }
+        })
+    })
+
+    //by clicking on...
+    d.addEventListener("click",(e)=>{
+
+        switch (e.target){
+            //click on btnAbrir
+            case btnAbrir:
+            //show modal
+            modal.style.display = "flex"; 
+            break;
+
+            //click on btnCerrar
+            case btnCerrar:
+            //hide modal
+            modal.style.display = "none"; 
+            break;
+        }
+    })
+
+}
+
+//Insert movie information
 function cambiarPelicula(){
+    //save movie location
     let cambiando = peliculas[contadora];
 
  img.src = cambiando.img;
@@ -65,42 +113,4 @@ function cambiarPelicula(){
  modalYear.textContent = cambiando.año;
  text.textContent = cambiando.descripcion; 
  modalText.textContent = cambiando.modalText;  
-}
-
-export function resenias(){
-
-    btns.forEach(function(btn){
-        btn.addEventListener("click" , (e)=>{
-            const btnClick = e.currentTarget.classList;
-            if(btnClick.contains("resenias-cont__btn-right")){
-                contadora++;  
-                if(contadora > peliculas.length -1){
-                    contadora = 0;
-                }
-                cambiarPelicula();
-            } else if(btnClick.contains("resenias-cont__btn-left")){
-                contadora--;
-                if(contadora < 0){
-                    contadora = peliculas.length - 1;
-                }
-                cambiarPelicula();
-            }
-        })
-    })
-
-    d.addEventListener("click",(e)=>{
-
-        switch (e.target){
-            case btnAbrir:
-            modal.style.display = "flex"; 
-            break;
-
-            case btnCerrar:
-            modal.style.display = "none"; 
-            break;
-        }
-
-
-    })
-
 }

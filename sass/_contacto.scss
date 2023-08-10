@@ -1,0 +1,161 @@
+@use "mixins";
+
+.contact-cont{
+    @include mixins.flex-box(column,nowrap,center,center);
+    gap: 2rem;
+    width: 100%;
+    margin: 1rem auto;
+
+    &__call{
+        @include mixins.flex-box(column,nowrap,center,center);
+        gap: 1rem;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 2;
+
+        & h2{
+            width: 80%;
+            margin: 1rem auto 0;
+            text-align: center;
+            z-index: 2;
+        }
+    }
+
+    &__error{
+        font-size: 80%;
+        background-color: red;
+        color: #fff;
+        transition: all 800ms ease;
+    }
+
+    &__error.activar{
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        animation: show-message 1s 1 normal 0s ease-out both;
+    } 
+    
+    &__none{
+        display: none;
+    }
+
+    &__spin{
+        width: 2rem;
+        margin: 0 auto;
+    }
+
+    &__form-information{
+        width: 100%;
+        z-index: 2;
+    }
+
+    &__form{
+        width: 80%;
+        margin: 2rem auto 3rem;
+    }
+
+    &__form input,
+    &__form textarea,
+    &__form legend{
+        margin: .5rem auto 0;
+        width: 60%;
+    }
+
+    &__form textarea{
+        margin-bottom: 1rem;
+    }
+
+    &__form input:nth-child(10){
+        width: 20%;
+        margin-bottom: 2rem;
+        cursor: pointer;
+    }
+
+    &__response p{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__watermark{
+        position: absolute;
+        z-index: 1;
+        height: 27.5rem;
+        top: 16px;
+        left: 0;
+        filter: invert(70%) sepia(55%) saturate(6666%) hue-rotate(347deg) brightness(96%) contrast(96%);
+        opacity: 0.2;
+    }
+
+    &__chat{
+        @include mixins.flex-box(column,nowrap, center,center);
+        width: 100%;
+        background-color: var(--color-second);
+
+        & h2{
+            width: 80%;
+            margin: 2rem auto 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        & p{
+            width: 80%;
+            margin: 0 auto 1rem;
+            text-align: center;
+            color: white;
+        }
+    }
+
+    &__btn{
+        margin: 0 auto 1rem;
+        padding: .5rem;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+    }
+
+    
+
+    &__sedes{
+        width: 80%;
+        height: auto;
+
+        & h2{
+            margin: 1rem auto 2rem;
+            text-align: center;
+        }
+    }
+    
+    &__directions{
+        @include mixins.flex-box(row,wrap,center,flex-start);
+        width: 100%;
+        gap: 2rem;
+        margin: 1rem auto 2rem;
+
+        & p{
+            text-align: center;
+        }
+    }
+
+    &__direction p a{
+        text-decoration:underline;
+    }
+
+    &__contact{
+        @include mixins.flex-box(column,nowrap, center,center);
+        width: 80%;
+
+        & h2{
+            width: 80%;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        & p{
+            width: 60%;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@1,200&display=swap"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link rel="stylesheet" href="./css/style.css">
+    <title>Planes</title>
+</head>
+<body>
+      <!--Header starts-->
+  <header class="header header-conversor">
+    <a href="index.html" class="header__logo">
+      <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
+      <span class="header__logo-span">M-Functions</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav__options">
+        <li class="nav__options-menu"> <a href="index.html">Inicio</a> </li>
+        <li  class="nav__options-menu"> <a href="planes.html">Planes</a> 
+          <ul>
+            <li > <a href="planes.html">Empresariales</a> </li>
+            <li > <a href="planes.html">Estudiantiles</a> </li>
+            <li > <a href="planes.html">Freelancer</a> </li>
+            <li > <a href="planes.html">Mipymes</a> </li>
+            <li  class="nav__options-menu"> <a href="planes.html">Universitarios</a>
+            <ul>
+              <li ><a href="planes.html">Instituciones</a> </li>
+              <li ><a href="planes.html">Docentes</a> </li>
+              <li ><a href="planes.html">Estudiantes</a> </li>
+            </ul> 
+            </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="compania.html">Compañía</a>
+          <ul>
+            <li ><a href="compania.html">Misión</a> </li>
+            <li ><a href="compania.html">Visión</a> </li>
+            <li ><a href="compania.html">Historia</a> </li>
+            <li ><a href="compania.html">Nuestros planes</a> </li>
+          </ul> 
+        </li>
+        <li class="nav__options-menu"> <a href="nuestra-diferencia.html">Nuestra diferencia</a> 
+          <ul>
+            <li><a href="nuestra-diferencia.html">Motivación</a> </li>
+            <li><a href="nuestra-diferencia.html">Comunidad</a> </li>
+            <li><a href="nuestra-diferencia.html">Elígenos</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="blog.html">Blog</a> 
+          <ul>
+            <li><a href="blog.html">Tu historia</a> </li>
+            <li><a href="blog.html">Colaboradores</a> </li>
+            <li><a href="blog.html">Clientes</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="contacto.html">Contacto</a>
+          <ul>
+            <li ><a href="contacto.html">Agendar llamada</a> </li>
+            <li ><a href="contacto.html">Chat</a> </li>
+            <li ><a href="contacto.html">Sedes</a> </li>
+            <li ><a href="contacto.html">Horario de atención</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="ingresar.html">Ingresar</a> </li>
+      </ul>
+
+    </nav>
+
+  </header>
+  <!--Header ends-->
+    <!--Menu-hamburger button-->  
+    <button class="btnMenu">
+        <img class="btnMenu__logo" src="./img/menu.svg">
+      </button>
+        <!--Panel starts-->    
+  <aside class="panel">
+    <nav class="panel__menu">
+      <a href="index.html" class="panel__menu-options">Inicio</a>
+      <a href="planes.html" class="panel__menu-options">Planes</a>
+      <a href="compania.html" class="panel__menu-options">Compañía</a>
+      <a href="nuestra-diferencia.html" class="panel__menu-options">Nuestra diferencia</a>
+      <a href="blog.html" class="panel__menu-options">Blog</a>
+      <a href="contacto.html" class="panel__menu-options">Contacto</a>
+      <a href="ingresar.html" class="panel__menu-options">Ingresar</a>
+    </nav>
+  </aside>
+  <!--Panel ends--> 
+  <!--Main starts-->
+  <main>
+    <section class="planes-cont">
+        <h2 class="planes-cont__title">Conoce todos nuestros planes</h2>
+        <ul class="planes-cont__options">
+            <li class="planes-cont__option planes-cont__option1">
+                <a href="#business">Empresariales</a> </li>
+            <li class="planes-cont__option planes-cont__option2">
+                <a href="#students">Estudiantiles</a> </li>
+            <li class="planes-cont__option planes-cont__option3">
+                <a href="#freelancer">Freelancer</a> </li>
+            <li class="planes-cont__option planes-cont__option4">
+                <a href="#miPymes">Mipymes</a> </li>
+            <li class="planes-cont__option planes-cont__option5">
+                <a href="#academic">Universitarios</a> </li>
+        </ul>
+        <section class="planes-cont__empresariales" id="business" data-observerPlans>
+            <figure class="planes-cont__img-cont">
+                <img src="./img/empresariales.jpg" alt="diferentes tipos de personas con perfiles empresariales" class="planes-cont__img">
+            </figure>
+            <div class="planes-cont__business-cont">
+                <div class="planes-cont__intro">
+                    <h2>¿Qué ofrecemos?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ad! Nemo ducimus laboriosam illum praesentium est temporibus distinctio neque ab expedita dolore odit quod, necessitatibus recusandae nostrum facilis sapiente ullam, maxime natus ratione reprehenderit! Nihil fugiat iste quidem numquam maxime, reprehenderit quos rem asperiores odit expedita ducimus tempora culpa est.</p>
+                    <br>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae sit nam laboriosam ratione cumque. Possimus laboriosam sed nobis cupiditate cumque porro, blanditiis enim eos odit, veniam vitae ipsam rem neque quisquam cum et iusto aliquid mollitia fugiat dicta? Aut, dolores!</p>
+                </div>
+                <div class="planes-cont__offers">
+                    <h2>Nuestros planes</h2>
+                    <ol class="planes-cont__business-items">
+                        <li>
+                            Básico: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quis laborum enim quaerat id similique cupiditate ratione consequuntur consequatur adipisci?
+                        </li>
+                        <br>
+                        <li>Profesional: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus ducimus praesentium dolorum optio error quas neque magni expedita consectetur modi?</li>
+                        <br>
+                        <li>Experto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio soluta, ex eos numquam quibusdam incidunt dignissimos voluptates temporibus ratione maiores?</li>
+                        <li></li>
+                    </ol>
+
+                </div>
+            </div>
+        </section>
+        <section class="planes-cont__students-cont" id="students" data-observerPlans>
+            <h2>¡Lo que tenemos para ti!</h2>
+            <div class="planes-cont__students-items">
+              <div class="planes-cont__student-item">
+                <span class="material-symbols-outlined">
+                  child_care
+                  </span>
+                  <h3>Basic</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium obcaecati accusantium doloremque omnis voluptas nesciunt.</p>
+              </div>
+              <div class="planes-cont__student-item">
+                <span class="material-symbols-outlined">
+                  school
+                  </span>
+                  <h3>Medium</h3>
+                  <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta et consequatur asperiores in odit nobis!</P>
+              </div>
+              <div class="planes-cont__student-item">
+                <span class="material-symbols-outlined">
+                  engineering
+                  </span>
+                  <h3>Pro</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, laboriosam eligendi illo recusandae maxime repellendus?</p>
+              </div>
+            </div>
+        </section>
+        <section class="planes-cont__freelancer-cont" id="freelancer" data-observerPlans>
+          <figure class="planes-cont__img-cont">
+            <img src="./img/freelancer.jpg" alt="persona trabajando en un computador" class="planes-cont__img-freelancer">
+          </figure>
+          <div class="planes-cont__info-freelancer">
+            <h2>¡Para ti trabajamos!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sunt dolores delectus voluptatum doloremque! Alias numquam deserunt, modi corrupti, debitis sunt culpa soluta iusto consequatur, corporis fuga labore earum blanditiis architecto. Eligendi repudiandae quam eos nam eius. Cumque laborum amet quidem harum, hic earum! Sunt!</p>
+            <div class="planes-cont__items-freelancer">
+              <div class="planes-cont__item-freelancer">
+                <span class="material-symbols-outlined">
+                  insert_chart
+                  </span>
+                  <h3>standard</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem a obcaecati minima cumque, ratione mollitia! Ad repellendus earum nulla labore! Fugiat aperiam nam debitis nihil?</p>
+
+              </div>
+              <div class="planes-cont__item-freelancer">
+                <span class="material-symbols-outlined">
+                  schema
+                  </span>
+                  <h3>expert</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto minima sunt sint repudiandae veritatis sapiente iure nesciunt exercitationem libero id.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <section class="planes-cont__miPymes-cont" id="miPymes" data-observerPlans>
+          <h2>Para tu organización!!!</h2>
+          <div class="planes-cont__miPymes-info">
+            <div class="planes-cont__miPymes-items">
+              <span class="material-symbols-outlined">
+                data_thresholding
+                </span>
+                <div class="planes-cont__miPymes-text">
+                  <h3>Regular</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsum laboriosam dolore, consectetur voluptates numquam.</p>
+                </div>
+            </div>
+            <div class="planes-cont__miPymes-items">
+              <span class="material-symbols-outlined">
+                empty_dashboard
+                </span>
+                <div class="planes-cont__miPymes-text">
+                  <h3>Asocciate</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsum laboriosam dolore, consectetur voluptates numquam.</p>
+                </div>
+            </div>
+            <div class="planes-cont__miPymes-items">
+              <span class="material-symbols-outlined">
+                rebase
+                </span>
+                <div class="planes-cont__miPymes-text">
+                  <h3>Premium</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsum laboriosam dolore, consectetur voluptates numquam.</p>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section class="planes-cont__academic-cont" id="academic" data-observerPlans>
+          <figure>
+            <img src="./img/uiversitarios.jpg" alt="jovenes con maletas caminando" class="planes-cont__academic-img">
+          </figure>
+          <div class="planes-cont__academic-info">
+            <h2>Porque pensamos en ti...</h2>
+          
+          <div class="planes-cont__academic-items">
+            <div class="planes-cont__academic-item">
+              <span class="material-symbols-outlined">
+                child_care
+                </span>
+                <h3>Basic</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium obcaecati accusantium doloremque omnis voluptas nesciunt.</p>
+            </div>
+            <div class="planes-cont__academic-item">
+              <span class="material-symbols-outlined">
+                school
+                </span>
+                <h3>Medium</h3>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta et consequatur asperiores in odit nobis!</P>
+            </div>
+            <div class="planes-cont__academic-item">
+              <span class="material-symbols-outlined">
+                engineering
+                </span>
+                <h3>Pro</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, laboriosam eligendi illo recusandae maxime repellendus?</p>
+            </div>
+          </div>
+        </div>
+
+        </section>
+
+        <ul class="planes-cont__menu-options">
+          <li class="planes-cont__menu-option">
+            <a href="#business" class="planes-cont__redirection">
+              <span id="business" data-observerPlans>Empresariales</span>
+              <span class="material-symbols-outlined planes-cont__circle">
+                radio_button_unchecked
+                </span>
+            </a>
+          </li>
+          <li class="planes-cont__menu-option">
+            <a href="#students" class="planes-cont__redirection">
+
+              <span id="students" data-observerPlans>Estudiantiles</span>
+              <span class="material-symbols-outlined planes-cont__circle">
+                radio_button_unchecked
+                </span>
+            </a>            
+          </li>
+          <li class="planes-cont__menu-option">
+            <a href="#freelancer" class="planes-cont__redirection">
+              <span id="freelancer" data-observerPlans>Freelancer</span>
+              <span class="material-symbols-outlined planes-cont__circle">
+                radio_button_unchecked
+                </span>
+            </a>            
+          </li>
+          <li class="planes-cont__menu-option">
+            <a href="#miPymes" class="planes-cont__redirection">
+              <span id="miPymes" data-observerPlans>Mipymes</span>
+              <span class="material-symbols-outlined planes-cont__circle">
+                radio_button_unchecked
+                </span>
+            </a>
+          </li>
+          <li class="planes-cont__menu-option">
+            <a href="#academic" class="planes-cont__redirection">
+              <span id="academic" data-observerPlans>Universitarios</span>
+              <span class="material-symbols-outlined planes-cont__circle">
+                radio_button_unchecked
+                </span>
+            </a>            
+          </li>
+        </ul>
+    </section>
+  </main>
+  <!--Main ends-->
+    <!--Footer starts-->
+    <footer class="footer footer-conversor">
+        <div class="footer__social footer__social--margin">
+        <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
+        <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
+        <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
+        <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
+        </div>
+        <div class="footer__copyright footer__copyright--height">
+        <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
+        <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
+        </div>
+       </footer>
+      <!--Footer ends-->   
+      <!--js script-->
+      <script src="logica.js" type="module"></script>
+    
+</body>
+</html>

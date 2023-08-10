@@ -28,9 +28,7 @@
 
     &__informacion{
         width: 50%;
-        height: inherit;
-        //overflow-y: scroll;
-        
+        height: inherit;        
     }
 
     &__btns{
@@ -51,8 +49,6 @@
     &__cont-escrito{
         height: 85%;
         overflow-y: scroll;
-    }
-
-    
+    }    
 
 }

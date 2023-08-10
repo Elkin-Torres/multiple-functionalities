@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@1,200&display=swap"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
+    <title>Blog</title>
+</head>
+<body>
+  <!--Header starts-->
+  <header class="header header-conversor">
+    <a href="index.html" class="header__logo">
+      <img src="./img/multiple.svg" alt="logo M-funtions" class="header__logo-img">
+      <span class="header__logo-span">M-Functions</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav__options">
+        <li class="nav__options-menu"> <a href="index.html">Inicio</a> </li>
+        <li  class="nav__options-menu"> <a href="planes.html">Planes</a> 
+          <ul>
+            <li > <a href="planes.html">Empresariales</a> </li>
+            <li > <a href="planes.html">Estudiantiles</a> </li>
+            <li > <a href="planes.html">Freelancer</a> </li>
+            <li > <a href="planes.html">Mipymes</a> </li>
+            <li  class="nav__options-menu"> <a href="planes.html">Universitarios</a>
+            <ul>
+              <li ><a href="planes.html">Instituciones</a> </li>
+              <li ><a href="planes.html">Docentes</a> </li>
+              <li ><a href="planes.html">Estudiantes</a> </li>
+            </ul> 
+            </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="compania.html">Compañía</a>
+          <ul>
+            <li ><a href="compania.html">Misión</a> </li>
+            <li ><a href="compania.html">Visión</a> </li>
+            <li ><a href="compania.html">Historia</a> </li>
+            <li ><a href="compania.html">Nuestros planes</a> </li>
+          </ul> 
+        </li>
+        <li class="nav__options-menu"> <a href="nuestra-diferencia.html">Nuestra diferencia</a> 
+          <ul>
+            <li><a href="nuestra-diferencia.html">Motivación</a> </li>
+            <li><a href="nuestra-diferencia.html">Comunidad</a> </li>
+            <li><a href="nuestra-diferencia.html">Elígenos</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="blog.html">Blog</a> 
+          <ul>
+            <li><a href="blog.html">Tu historia</a> </li>
+            <li><a href="blog.html">Colaboradores</a> </li>
+            <li><a href="blog.html">Clientes</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="contacto.html">Contacto</a>
+          <ul>
+            <li ><a href="contacto.html">Agendar llamada</a> </li>
+            <li ><a href="contacto.html">Chat</a> </li>
+            <li ><a href="contacto.html">Sedes</a> </li>
+            <li ><a href="contacto.html">Horario de atención</a> </li>
+          </ul>
+        </li>
+        <li class="nav__options-menu"> <a href="ingresar.html">Ingresar</a> </li>
+      </ul>
+
+    </nav>
+
+  </header>
+  <!--Header ends-->
+    <!--Menu-hamburger button-->  
+    <button class="btnMenu">
+        <img class="btnMenu__logo" src="./img/menu.svg">
+      </button>
+  <!--Panel starts-->    
+  <aside class="panel">
+    <nav class="panel__menu">
+      <a href="index.html" class="panel__menu-options">Inicio</a>
+      <a href="planes.html" class="panel__menu-options">Planes</a>
+      <a href="compania.html" class="panel__menu-options">Compañía</a>
+      <a href="nuestra-diferencia.html" class="panel__menu-options">Nuestra diferencia</a>
+      <a href="blog.html" class="panel__menu-options">Blog</a>
+      <a href="contacto.html" class="panel__menu-options">Contacto</a>
+      <a href="ingresar.html" class="panel__menu-options">Ingresar</a>
+    </nav>
+  </aside>
+  <!--Panel ends--> 
+  <!--Main starts-->
+  <main>
+    <section class="blog-cont">
+        <section class="blog-cont__history">
+            <h2>¿Quieres contarnos tu historia con nosotros?</h2>
+            <p>Si tienes alguna petición, queja o reclamo, o sencillamente quieres decirnos como estuvo tu experiencia con nuestro servicio, puedes diligenciar el siguiente formulario, llegado caso nos contactaremos contigo</p>
+
+          <div class="blog-cont__form-information" data-observerBlog>
+            <form class="blog-cont__form" form action="https://formsubmit.co/elkin148@hotmail.com" method="POST" target="_blank">
+                <legend>Por favor ingresa la siguiente información:</legend>
+                <input type="text" name="name" placeholder="Escribe tu nombre..."       pattern="^([a-zA-ZÑñÁáÉéÍíÓóÚúÜü]+\s?)+$" title="La información registrada no es válida como un nombre" autocomplete="off" required>
+                <input type="email" name="email" placeholder="Escribe un email..."           pattern="^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-z]{2,15})$" title="La información ingresada no es válida como un email" autocomplete="off" required>
+                <input type="text" name="asunto" placeholder="Escribe el asunto..." title="El asunto es requerido..."
+                autocomplete="off" required>
+              <textarea name="comentarios" placeholder="Escribe tus comentarios..." cols="50" rows="5"
+                data-pattern="^.{1,255}$" title="Los comentarios no pueden exceder los 250 carácteres" required></textarea>
+  
+                <input type="submit">
+                <div class="blog-cont__loader blog-cont__none">
+                    <img src="img/tail-spin.svg" alt="Cargando" class="blog-cont__spin">
+                </div>
+                <div class="blog-cont__response blog-cont__none">
+                  <p>Los datos fueron enviados</p>
+                </div>
+                
+            </form>            
+          </div>
+          
+
+        </section>
+        <section class="blog-cont__workers">
+          <h2>Conoce a nuestros colaboradores</h2>
+          <h3>Estas son las personas que estarán acompañándote a lo largo de tu experiencia con nosotros, estás en muy buenas manos, confía en nosotros!</h3>           
+        </section>
+        <section class="blog-cont__clients">
+          <h2>!Eres nuestra razón de ser, por eso queremos ofrecerte lo mejor, no te conformes con menos, nosotros te respaldaremos!</h2>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quisquam laborum et impedit placeat magnam explicabo, harum iste. Possimus sapiente minima necessitatibus adipisci id. In reprehenderit exercitationem id dolorem quo minima quibusdam laborum, sed nam!</p>
+
+          <div class="blog-cont__offers" data-observerBlog>
+            <div class="blog-cont__offerWhat">
+              <h3>¿Qué te ofrecemos?</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem quod saepe veniam sit accusamus, sed ad explicabo tempore vero, ducimus placeat cumque laboriosam temporibus ipsam nemo minima nisi neque. Quis at sapiente eius fugit eos quidem eveniet nesciunt aspernatur architecto dolores, aliquam magnam eaque rerum labore, voluptatum dolor, error sed?</p>
+            </div>
+            <div class="blog-cont__offerWhy">
+              <h3>¿Por qué escogernos?</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem quod saepe veniam sit accusamus, sed ad explicabo tempore vero, ducimus placeat cumque laboriosam temporibus ipsam nemo minima nisi neque. Quis at sapiente eius fugit eos quidem eveniet nesciunt aspernatur architecto dolores, aliquam magnam eaque rerum labore, voluptatum dolor, error sed?</p>
+            </div>
+            <div class="blog-cont__warranty">
+              <h3>Nuestra garantia</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis praesentium hic nulla dignissimos molestias sapiente enim expedita, quas cumque facilis. Non quae temporibus sit maiores, similique obcaecati delectus odio, a, aliquam natus voluptatibus illum explicabo quaerat. Nihil voluptate ipsa beatae officiis, aspernatur quam animi debitis aliquid rerum atque? Placeat optio, reprehenderit quam itaque aut iusto facere libero ut veniam ad.</p>
+            </div>
+          </div>
+
+        </section>
+
+
+    </section>
+
+  </main>
+  <!--Main ends-->
+    <!--Footer starts-->
+    <footer class="footer footer-conversor">
+        <div class="footer__social footer__social--margin">
+        <img src="./img/instagram.svg" alt="logo Instagram" class="footer__instagram">
+        <img src="./img/facebook.svg" alt="logo Facebook" class="footer__facebook">
+        <img src="./img/twitter.svg" alt="logo Twitter" class="footer__twitter">
+        <img src="./img/whatsapp.svg" alt="logo whatsapp" class="footer__whatsapp">
+        </div>
+        <div class="footer__copyright footer__copyright--height">
+        <img src="./img/multiple.svg" alt="logo M-funtions" class="footer__img">
+        <span class="footer__span">M-Functions | Visitanos en nuestras redes sociales</span>
+        </div>
+       </footer>
+      <!--Footer ends-->   
+      <!--js script-->
+      <script src="logica.js" type="module"></script>
+
+    
+</body>
+</html>

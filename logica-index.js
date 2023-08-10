@@ -8,6 +8,7 @@ href= d.querySelectorAll(".container__carousel-option"),
   cambiarImagen = d.querySelector(".btnMenu__logo"),
   panel = d.querySelector(".panel");
 
+//Carousel information 
 const informacion = [
   {
     href: "calculadora.html",
@@ -59,31 +60,32 @@ const informacion = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa? ",
   },
   {
-    href:"",
-    img: "",
-    texto: "aca va el texto8",
+    href:"conversor.html",
+    img: "./img/universal-currency.svg",
+    texto: "Conversor de divisas",
     lorem:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa? ",
   },
   {
-    href:"",
-    img: "",
-    texto: "aca va el texto9",
+    href:"library.html",
+    img: "./img/library-img.svg",
+    texto: "Biblioteca de imágenes",
     lorem:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae inventore exercitationem nobis quas qui est repellat hic cum ipsa? ",
   },
 ];
-
+//function exported to logica.js
 export default function carousel(){
     let cont1 = 0; //-1
     let cont2 = 1; //0
     let cont3 = 2; //1
     
-    
+    //When clicked on...
     d.addEventListener("click", (e) => {
+      //click on right
       if (e.target === right) {
     
-        //Para poner en la ultima posicion del array "informacion" a la variable contadora
+        //To put the counter variable in the last position of the "information" array
         if (cont1 === 0) {
           cont1 = 9;
         }
@@ -96,7 +98,7 @@ export default function carousel(){
     
         cont1 -= 1;
     
-        //Se inserta la información en los contenedores
+        //Information is inserted into the containers
         href[0].href = informacion[cont1].href;
         img[0].src = informacion[cont1].img;
         text[0].textContent = informacion[cont1].texto;
@@ -116,7 +118,7 @@ export default function carousel(){
        
       }
     
-      //Para volver al inicio del carrousel de imagenes, si se está al final de éste y se oprime "left"
+      //To return to the beginning of the image carousel, if you are at the end of it and press "left"
       if (e.target === left) {
         if (cont1 === 8) {
           cont1 = -1;
@@ -135,7 +137,7 @@ export default function carousel(){
     
         cont1 += 1;
     
-        //Se inserta la información en los contenedores
+        //Information is inserted into the containers
         href[0].href = informacion[cont1].href;
         img[0].src = informacion[cont1].img;
         text[0].textContent = informacion[cont1].texto;
@@ -157,15 +159,19 @@ export default function carousel(){
     
 }
 
+//function exported to logica.js
 export function btnImg(){
 
 let contImg = true;
+  //When clicked on "cambiar imagen"
   cambiarImagen.addEventListener("click",(e)=>{
+    //if contImg is true
     if(contImg){
       cambiarImagen.src = "./img/close-menu.svg";
       panel.classList.toggle("panel-active");
       contImg = false;
-    } else {
+    }//if contImg is false 
+    else {
       cambiarImagen.src = "./img/menu.svg";
       panel.classList.toggle("panel-active");
       contImg = true;
