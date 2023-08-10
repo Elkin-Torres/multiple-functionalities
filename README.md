@@ -1,25 +1,28 @@
 # Multiple-functionalities
-Este proyecto se realizó para poner en práctica gran parte del contenido temático de los lenguajes: Javascript, HTML, CSS y SASS.
+This project was made to put into practice a large part of the thematic content of the languages: Javascript, HTML, CSS and SASS.
 ## Contenido
-Multiple-functionalities es una propuesta de diseño y realización de proyectos, utilizando difrentes lenguajes, por medio de los cuales se intenta demostrar al potencial cliente que la empresa es su mejor opción para encargarle esa idea que tiene en mente y hacerla realidad. Esto se demuestra con la agrupación de varios mini-proyectos que se reunen y demuestran el uso de conceptos que van desde lo básico, como por ejemplo el manejo de objetos, hasta algo más avanzado, como lo es el llamado y posterior manipulación de información por medio de algunas API.
+Multiple-functionalities is a proposal for the design and realization of projects, using different languages, by means of which an attempt is made to demonstrate to the potential client that the company is their best option to commission that idea they have in mind and make it a reality. This is demonstrated with the grouping of several mini-projects that come together and demonstrate the use of concepts that go from the basics, such as object handling, to something more advanced, such as the call and subsequent manipulation of information by through some APIs.
 
 ![1](https://github.com/Elkin-Torres/multiple-functionalities/assets/110268931/03446b16-20c7-428d-bcbf-fbbfc813283c)
 
 
-### Construido con...
+### built with...
 <ul>
   <li>Javascript</li>
   <li>HTML</li>
   <li>CSS</li>
   <li>SASS</li>
 </ul>
-### APIs  y librerias usadas:
+###APIs and libraries used:
 <ul>
-  <li>[Unsplash API](https://unsplash.com/developers "Unsplash")</li>
-  <li>[Frankfurter API](https://www.frankfurter.app/docs/ "Frankfurter")</li>
-  <li>[Animate](https://animate.style/ "Animate")</li>
-  <li>[wow.js](https://wowjs.uk/ "wow.js")</li>
+  <li>Unsplash API:https://unsplash.com/developers</li>
+  <li>Frankfurter API: https://www.frankfurter.app/docs</li>
+  <li>Animate: https://animate.style</li>
+  <li>wow.js: https://wowjs.uk</li>
 </ul>
+
+###Page link
+click on the link: 
 
 
 
