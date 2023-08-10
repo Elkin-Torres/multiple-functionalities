@@ -6,7 +6,7 @@ Multiple-functionalities is a proposal for the design and realization of project
 ![1](https://github.com/Elkin-Torres/multiple-functionalities/assets/110268931/03446b16-20c7-428d-bcbf-fbbfc813283c)
 
 
-### built with...
+### Built with...
 <ul>
   <li>Javascript</li>
   <li>HTML</li>
