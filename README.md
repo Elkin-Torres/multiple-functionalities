@@ -13,12 +13,14 @@ Multiple-functionalities is a proposal for the design and realization of project
   <li>CSS</li>
   <li>SASS</li>
 </ul>
-### APIs and libraries used:
+
+<h3>APIs and libraries used:</h3>
 <ul>
-  <li>Unsplash API:https://unsplash.com/developers</li>
-  <li>Frankfurter API: https://www.frankfurter.app/docs</li>
-  <li>Animate: https://animate.style</li>
-  <li>wow.js: https://wowjs.uk</li>
+  <li>Unsplash API:(https://unsplash.com/developers)</li>
+  <li>Frankfurter API: (https://www.frankfurter.app/docs)</li>
+  <li>Animate: (https://animate.style)</li>
+  <li>wow.js: (https://wowjs.uk/)</li>
 </ul>
-### Page link:
+<h3>Page link:</h3>
 click on the link: https://elkin-torres.github.io/multiple-functionalities
+
