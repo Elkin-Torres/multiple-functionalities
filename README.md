@@ -13,7 +13,7 @@ Multiple-functionalities is a proposal for the design and realization of project
   <li>CSS</li>
   <li>SASS</li>
 </ul>
-###APIs and libraries used:
+### APIs and libraries used:
 <ul>
   <li>Unsplash API:https://unsplash.com/developers</li>
   <li>Frankfurter API: https://www.frankfurter.app/docs</li>
@@ -21,8 +21,8 @@ Multiple-functionalities is a proposal for the design and realization of project
   <li>wow.js: https://wowjs.uk</li>
 </ul>
 
-###Page link
-click on the link: 
+### Page link
+click on the link: https://elkin-torres.github.io/multiple-functionalities
 
 
 
