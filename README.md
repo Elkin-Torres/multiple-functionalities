@@ -20,5 +20,5 @@ Multiple-functionalities is a proposal for the design and realization of project
   <li>Animate: https://animate.style</li>
   <li>wow.js: https://wowjs.uk</li>
 </ul>
-### Page link
+### Page link:
 click on the link: https://elkin-torres.github.io/multiple-functionalities
